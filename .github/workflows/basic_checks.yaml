@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container: rocker/ml:4.1.1
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - name: Query dependencies and update old packages
         run: |
