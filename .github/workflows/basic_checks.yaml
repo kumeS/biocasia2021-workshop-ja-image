@@ -9,7 +9,7 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    container: rocker/ml:4.1.1
+    container: bioconductor/bioconductor_docker:devel
     steps:
       - uses: actions/checkout@v1
 
