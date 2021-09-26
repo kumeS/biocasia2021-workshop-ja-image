@@ -1,7 +1,7 @@
 on: [push, pull_request]
 
 env:
-  cache-version: v2
+  cache-version: v1
   repo-name: kumeS/biocasia2021-workshop-ja-image
   R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
   GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container: rocker/ml:4.1.1
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Query dependencies and update old packages
         run: |
