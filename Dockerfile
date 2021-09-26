@@ -1,4 +1,4 @@
-FROM bioconductor/bioconductor_docker:devel
+FROM rocker/ml:4.1.1
 
 WORKDIR /home/rstudio
 
