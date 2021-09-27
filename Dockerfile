@@ -12,7 +12,9 @@ RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocMan
 
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install('BioImageDbs', ask=FALSE)"
 
-RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); devtools::install_github('kumeS/rMiW', dependencies=TRUE, force = TRUE, build_vignettes=FALSE)"
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install('EBImage', ask=FALSE)"
+
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); devtools::install_github('kumeS/rMiW', build_vignettes=FALSE)"
 
 
 
