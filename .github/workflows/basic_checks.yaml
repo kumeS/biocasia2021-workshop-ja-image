@@ -2,7 +2,7 @@ on: [push, pull_request]
 
 env:
   cache-version: v1
-  repo-name: kumes/biocasia2021-workshop-ja-image
+  repo-name: skume/biocasia2021-workshop-ja-image
   R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
   GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
