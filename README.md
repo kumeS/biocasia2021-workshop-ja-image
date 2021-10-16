@@ -3,6 +3,10 @@
 [![R build
 status](https://github.com/kumeS/biocasia2021-workshop-ja-image/.github/workflows/basic_checks.yaml/badge.svg)](https://github.com/kumeS/biocasia2021-workshop-ja-image/actions)
 
+## Author/Instructor
+
+-   [Satoshi Kume]() (<satoshi.kume.1984 at gmail.com>)
+
 ## Key resources
 
 -   Docker image: [Docker
@@ -17,9 +21,6 @@ This workshop covers basic methods of the image processing and image analysis in
 
 このワークショップでは、BioconductorパッケージであるEBImageを使って、Rでの画像処理・画像解析の基本的な方法を扱う。次に、BioImageDbsパッケージを用いて、ExperimentHubからの画像データの取得を行う。さらに、rMiWパッケージが提供する、Deep learningモデルの１つであるU-NETモデルを用いて、教師有り画像セグメンテーション（領域分割）を学び。このワークショップは、Orchestra環境にて実施する。
 
-### Instructor
-
--   [Satoshi Kume]() (<satoshi.kume.1984 at gmail.com>)
 
 ### Pre-requisites
 
