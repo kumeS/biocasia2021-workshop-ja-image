@@ -61,5 +61,6 @@ for a full list of dependencies.
 
 You can get access to the [cloud platform](http://app.orchestra.cancerdatasci.org/1) for the beginning.
 
+And then, you choose the "Introduction to Bioimage Analysis" workshop as below.
 
 ![cloud](inst/images/pic.png)
