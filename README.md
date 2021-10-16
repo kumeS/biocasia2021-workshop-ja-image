@@ -19,12 +19,12 @@ This workshop covers basic methods of the image processing and image analysis in
 
 ### Instructor
 
--   [Peter Hickey](https://peterhickey.org/) (<hickey@wehi.edu.au>)
+-   [Satoshi Kume]() (<satoshi.kume.1984 at gmail.com>)
 
 ### Pre-requisites
 
 - Basic knowledge of R syntax.
-- Basic operations on multi-dimensional array in R.
+- Basic knowledge and operations of multi-dimensional array in R.
 
 ### *R* / *Bioconductor* packages used
 
