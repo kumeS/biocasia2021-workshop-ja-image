@@ -1,4 +1,5 @@
-url: https://seandavi.github.io/BuildABiocWorkshop
+url: https://kumeS.github.io/biocasia2021-workshop-ja-image
+
 
 template:
   params:
@@ -6,13 +7,12 @@ template:
     #ganalytics: UA-99999999-9
 
 home:
-  title: "BuildABiocWorkshop"
+  title: "introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese)."
   type: inverse
 
 
 navbar:
   right:
    - icon: fa-github
-     href: https://github.com/seandavi/BuildABiocWorkshop
-     
+     href: https://github.com/kumeS/biocasia2021-workshop-ja-image
 

@@ -1,17 +1,20 @@
-Package: biocasia2021img
-Title: biocasia2021-workshop-ja-image
+Package: BiocAsia2021image
+Title: Introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese).
 Version: 0.9.1
 Authors@R: 
     person(given = "Satoshi",
            family = "Kume",
            role = c("aut", "cre"),
            email = "satoshi.kume.1984@gmail.com",
-           comment = c(ORCID = "your-orc-id-here"))
-Description: This package serves as a template for using github actions to 
-    prepare a Bioconductor Workshop package for use. In particular,
-    a pkgdown website and docker image are generated based on workflow 
-    settings. 
-License: MIT + file LICENSE
+           comment = c(ORCID = "0000-0001-7481-2843"))
+Description: This workshop item serves for introduction to bioimage analysis 
+    using R in Bioc Asia 2021 workshop (japanese) [<https://kumes.github.io/biocasia2021-workshop-ja-image/>].
+    This workshop covers basic methods of the image processing and image 
+    analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. 
+    In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” 
+    package. Using this dataset, we perform a supervised image segmentation 
+    using the U-NET model, one of deep learning models, provided by the rMiW package.
+License: Artistic License 2.0.
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -24,4 +27,4 @@ Suggests:
     pkgdown
 URL: https://github.com/kumeS/biocasia2021-workshop-ja-image
 VignetteBuilder: knitr
-DockerImage: seandavi/buildabiocworkshop:latest
+DockerImage: skume/biocasia2021-workshop-ja-image:latest
