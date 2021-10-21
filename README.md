@@ -27,12 +27,15 @@ This workshop covers basic methods of the image processing and image analysis in
 - Basic knowledge of R syntax.
 - Basic knowledge and operations of multi-dimensional array in R.
 
+- Rの構文の基礎知識。
+- Rにおける多次元配列の基本的な知識と操作方法。
+
 ### *R* / *Bioconductor* packages used
 
 These packages are the focus of this workshop:
 
--   *[BioImageDbs](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)*
 -   *[EBImage](https://bioconductor.org/packages/release/bioc/html/EBImage.html)*
+-   *[BioImageDbs](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)*
 -   *[rMiW](https://github.com/kumeS/rMiW)*
 
 Please see the workshop
@@ -43,12 +46,22 @@ for a full list of dependencies.
 
 | Activity                                       | Time   |
 |------------------------------------------------|--------|
-| Introduction                                   | 10 min  |
+| Introduction                                   | 10 min |
 | Basic image processing using EBImage           | 20 min |
-| U-NET segmentation using BioImageDbs and rMiW  | 20 min  |
+| U-NET segmentation using BioImageDbs and rMiW  | 20 min |
 | Q&A                                            | 10 min |
 
+
+| 内容 | 時間 |
+|------------------------------------------------|--------|
+| イントロダクション                             | 10分   |
+| EBImageを用いた基本的な画像処理                | 20分   |
+| BioImageDbsとrMiWを用いたU-NETセグメンテーション| 20分  |
+| 質疑応答                                       | 10分   |
+
 ### Workshop goals and objectives
+
+
 
 #### Learning goals
 
