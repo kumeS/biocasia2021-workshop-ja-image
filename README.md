@@ -23,7 +23,7 @@ This workshop covers basic methods of the image processing and image analysis in
 ### Pre-requisites / 事前要件
 
 - Basic knowledge of R syntax. / Rの構文の基礎知識
-- Basic knowledge and operations of multi-dimensional array in R. / Rにおける多次元配列の基本的な知識と操作
+- Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基本的な知識と操作
 
 ### *R* / *Bioconductor* packages used / 使用パッケージ
 
