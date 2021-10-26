@@ -1,5 +1,5 @@
 Package: BiocAsia2021image
-Title: Introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese).
+Title: Introduction to bioimage analysis using R in Bioc Asia 2021 workshop
 Version: 0.9.1
 Authors@R: 
     person(given = "Satoshi",

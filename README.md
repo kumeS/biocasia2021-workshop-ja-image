@@ -1,19 +1,17 @@
-# Introduction to Bioimage Analysis using R in [Bioc Asia 2021 Workshop (Japanese)](https://biocasia2021.bioconductor.org/workshops/)
-
-[![R build
-status](https://github.com/kumeS/biocasia2021-workshop-ja-image/.github/workflows/basic_checks.yaml/badge.svg)](https://github.com/kumeS/biocasia2021-workshop-ja-image/actions)
+# Introduction to Bioimage Analysis using R in [Bioc Asia 2021 Workshop](https://biocasia2021.bioconductor.org/workshops/)
 
 ## Author/Instructor
 
--   [Satoshi Kume]() (<satoshi.kume.1984 at gmail.com>)
+-   [Satoshi Kume](https://kumes.github.io/skume-Biography/skume-Biography.html) (<satoshi.kume.1984 at gmail.com>)
 
 ## Key resources
 
+-   GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)
 -   Docker image: [Docker
     Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)
--   Workshop material: [pkgdown
-    website](https://kumes.github.io/biocasia2021-workshop-ja-image/)
--   Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)
+-   **Workshop material: [pkgdown
+    website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
+-   **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
 
 ## Workshop description
 
@@ -22,29 +20,29 @@ This workshop covers basic methods of the image processing and image analysis in
 このワークショップでは、BioconductorパッケージであるEBImageを使って、Rでの画像処理・画像解析の基本的な方法を扱う。次に、BioImageDbsパッケージを用いて、ExperimentHubからの画像データの取得を行う。さらに、rMiWパッケージが提供する、Deep learningモデルの１つであるU-NETモデルを用いて、教師有り画像セグメンテーション（領域分割）を学び。このワークショップは、Orchestra環境にて実施する。
 
 
-### Pre-requisites
+### Pre-requisites / 事前要件
 
-- Basic knowledge of R syntax.
-- Basic knowledge and operations of multi-dimensional array in R.
+- Basic knowledge of R syntax. / Rの構文の基礎知識
+- Basic knowledge and operations of multi-dimensional array in R. / Rにおける多次元配列の基本的な知識と操作
 
-- Rの構文の基礎知識。
-- Rにおける多次元配列の基本的な知識と操作方法。
+### *R* / *Bioconductor* packages used / 使用パッケージ
 
-### *R* / *Bioconductor* packages used
+These packages are the focus of this workshop: / このワークショップでは、これらのパッケージに焦点を当てます。
 
-These packages are the focus of this workshop:
-
--   *[EBImage](https://bioconductor.org/packages/release/bioc/html/EBImage.html)*
--   *[BioImageDbs](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)*
--   *[rMiW](https://github.com/kumeS/rMiW)*
+-   **[EBImage](https://bioconductor.org/packages/release/bioc/html/EBImage.html)**
+-   **[BioImageDbs](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)**
+-   **[rMiW](https://github.com/kumeS/rMiW)**
 
 Please see the workshop
 [`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)
-for a full list of dependencies.
+for a full list of dependencies. / 詳細は、ワークショップの
+[`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)ファイルを見てください。
 
-### Time outline
 
-| Activity                                       | Time   |
+
+### Time outline / タイムテーブル
+
+| Activity (English)                             | Time   |
 |------------------------------------------------|--------|
 | Introduction                                   | 10 min |
 | Basic image processing using EBImage           | 20 min |
@@ -52,29 +50,37 @@ for a full list of dependencies.
 | Q&A                                            | 10 min |
 
 
-| 内容 | 時間 |
-|------------------------------------------------|--------|
-| イントロダクション                             | 10分   |
-| EBImageを用いた基本的な画像処理                | 20分   |
-| BioImageDbsとrMiWを用いたU-NETセグメンテーション| 20分  |
-| 質疑応答                                       | 10分   |
+| 内容 (日本語)                                   |  時間  |
+|-------------------------------------------------|--------|
+| イントロダクション                              |  10 分 |
+| EBImageを用いた基本的な画像処理                 |  20 分 |
+| BioImageDbsとrMiWを用いたU-NETセグメンテーション|  20 分 |
+| 質疑応答                                        |  10 分 |
 
-### Workshop goals and objectives
+### Workshop goals and objectives / ワークショップでの目標・目的 
 
+#### Learning goals / 学習の目標
 
+- EBImageパッケージの基本的な使い方を習得する
+- BioImageDbsを使った画像データ取得を習得する
+- rMiWを使った、Deep learningによる画像セグメンテーションの基本ワークフローを習得する
+- Keras文法を用いた、U-NETモデルの構築を経験する
+- 多次元アレイのデータ処理に慣れる
 
-#### Learning goals
+#### Learning objectives / 学習の目的
 
+- Rにおける画像セグメンテーションの基本ワークフローを学ぶ
+- Deep learningによる画像定量を始める初めのステップ
 
-
-#### Learning objectives
-
-
-
-## Execution environment
+## Execution environment / 実行環境
 
 You can get access to the [cloud platform](http://app.orchestra.cancerdatasci.org/1) for the beginning.
 
 And then, you choose the "Introduction to Bioimage Analysis" workshop as below.
 
+本ワークショップは、[cloud platform](http://app.orchestra.cancerdatasci.org/1)を使って行います。
+
+各自、Orchestra環境にログインして、所定のイメージをランチしてください。
+
 ![cloud](inst/images/pic.png)
+
