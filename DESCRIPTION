@@ -14,7 +14,7 @@ Description: This workshop item serves for introduction to bioimage analysis
     In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” 
     package. Using this dataset, we perform a supervised image segmentation 
     using the U-NET model, one of deep learning models, provided by the rMiW package.
-License: Artistic License 2.0.
+License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
