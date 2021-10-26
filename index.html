@@ -84,29 +84,28 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop-japanese" class="section level1">
+<div id="introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop-japanese" class="anchor"></a>Introduction to Bioimage Analysis using R in <a href="https://biocasia2021.bioconductor.org/workshops/">Bioc Asia 2021 Workshop (Japanese)</a>
+<a href="#introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop" class="anchor"></a>Introduction to Bioimage Analysis using R in <a href="https://biocasia2021.bioconductor.org/workshops/">Bioc Asia 2021 Workshop</a>
 </h1></div>
-
 <div id="authorinstructor" class="section level2">
 <h2 class="hasAnchor">
 <a href="#authorinstructor" class="anchor"></a>Author/Instructor</h2>
 <ul>
 <li>
-<a href="">Satoshi Kume</a> (&lt;satoshi.kume.1984 at gmail.com&gt;)</li>
+<a href="https://kumes.github.io/skume-Biography/skume-Biography.html">Satoshi Kume</a> (&lt;satoshi.kume.1984 at gmail.com&gt;)</li>
 </ul>
 </div>
 <div id="key-resources" class="section level2">
 <h2 class="hasAnchor">
 <a href="#key-resources" class="anchor"></a>Key resources</h2>
 <ul>
+<li>GitHub repo.: <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image">kumeS / biocasia2021-workshop-ja-image</a>
+</li>
 <li>Docker image: <a href="https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image">Docker Hub</a>
 </li>
-<li>Workshop material: <a href="https://kumes.github.io/biocasia2021-workshop-ja-image/">pkgdown website</a>
-</li>
-<li>Cloud platform: <a href="http://app.orchestra.cancerdatasci.org/1">Orchestra</a>
-</li>
+<li><strong>Workshop material: <a href="https://kumes.github.io/biocasia2021-workshop-ja-image/">pkgdown website</a></strong></li>
+<li><strong>Cloud platform: <a href="http://app.orchestra.cancerdatasci.org/1">Orchestra</a></strong></li>
 </ul>
 </div>
 <div id="workshop-description" class="section level2">
@@ -114,33 +113,31 @@
 <a href="#workshop-description" class="anchor"></a>Workshop description</h2>
 <p>This workshop covers basic methods of the image processing and image analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” package. Using this dataset, we perform a supervised image segmentation using the U-NET model, one of deep learning models, provided by the rMiW package.</p>
 <p>このワークショップでは、BioconductorパッケージであるEBImageを使って、Rでの画像処理・画像解析の基本的な方法を扱う。次に、BioImageDbsパッケージを用いて、ExperimentHubからの画像データの取得を行う。さらに、rMiWパッケージが提供する、Deep learningモデルの１つであるU-NETモデルを用いて、教師有り画像セグメンテーション（領域分割）を学び。このワークショップは、Orchestra環境にて実施する。</p>
-<div id="pre-requisites" class="section level3">
+<div id="pre-requisites--事前要件" class="section level3">
 <h3 class="hasAnchor">
-<a href="#pre-requisites" class="anchor"></a>Pre-requisites</h3>
+<a href="#pre-requisites--%E4%BA%8B%E5%89%8D%E8%A6%81%E4%BB%B6" class="anchor"></a>Pre-requisites / 事前要件</h3>
 <ul>
-<li><p>Basic knowledge of R syntax.</p></li>
-<li><p>Basic knowledge and operations of multi-dimensional array in R.</p></li>
-<li><p>Rの構文の基礎知識。</p></li>
-<li><p>Rにおける多次元配列の基本的な知識と操作方法。</p></li>
+<li>Basic knowledge of R syntax. / Rの構文の基礎知識</li>
+<li>Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基本的な知識と操作</li>
 </ul>
 </div>
-<div id="r--bioconductor-packages-used" class="section level3">
+<div id="r--bioconductor-packages-used--使用パッケージ" class="section level3">
 <h3 class="hasAnchor">
-<a href="#r--bioconductor-packages-used" class="anchor"></a><em>R</em> / <em>Bioconductor</em> packages used</h3>
-<p>These packages are the focus of this workshop:</p>
+<a href="#r--bioconductor-packages-used--%E4%BD%BF%E7%94%A8%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8" class="anchor"></a><em>R</em> / <em>Bioconductor</em> packages used / 使用パッケージ</h3>
+<p>These packages are the focus of this workshop: / このワークショップでは、これらのパッケージに焦点を当てます。</p>
 <ul>
-<li><em><a href="https://bioconductor.org/packages/release/bioc/html/EBImage.html">EBImage</a></em></li>
-<li><em><a href="https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html">BioImageDbs</a></em></li>
-<li><em><a href="https://github.com/kumeS/rMiW">rMiW</a></em></li>
+<li><strong><a href="https://bioconductor.org/packages/release/bioc/html/EBImage.html">EBImage</a></strong></li>
+<li><strong><a href="https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html">BioImageDbs</a></strong></li>
+<li><strong><a href="https://github.com/kumeS/rMiW">rMiW</a></strong></li>
 </ul>
-<p>Please see the workshop <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a> for a full list of dependencies.</p>
+<p>Please see the workshop <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a> for a full list of dependencies. / 詳細は、ワークショップの <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a>ファイルを見てください。</p>
 </div>
-<div id="time-outline" class="section level3">
+<div id="time-outline--タイムテーブル" class="section level3">
 <h3 class="hasAnchor">
-<a href="#time-outline" class="anchor"></a>Time outline</h3>
+<a href="#time-outline--%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB" class="anchor"></a>Time outline / タイムテーブル</h3>
 <table class="table">
 <thead><tr class="header">
-<th>Activity</th>
+<th>Activity (English)</th>
 <th>Time</th>
 </tr></thead>
 <tbody>
@@ -164,47 +161,60 @@
 </table>
 <table class="table">
 <thead><tr class="header">
-<th>内容</th>
+<th>内容 (日本語)</th>
 <th>時間</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td>イントロダクション</td>
-<td>10分</td>
+<td>10 分</td>
 </tr>
 <tr class="even">
 <td>EBImageを用いた基本的な画像処理</td>
-<td>20分</td>
+<td>20 分</td>
 </tr>
 <tr class="odd">
 <td>BioImageDbsとrMiWを用いたU-NETセグメンテーション</td>
-<td>20分</td>
+<td>20 分</td>
 </tr>
 <tr class="even">
 <td>質疑応答</td>
-<td>10分</td>
+<td>10 分</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="workshop-goals-and-objectives" class="section level3">
+<div id="workshop-goals-and-objectives--ワークショップでの目標目的" class="section level3">
 <h3 class="hasAnchor">
-<a href="#workshop-goals-and-objectives" class="anchor"></a>Workshop goals and objectives</h3>
-<div id="learning-goals" class="section level4">
+<a href="#workshop-goals-and-objectives--%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%81%A7%E3%81%AE%E7%9B%AE%E6%A8%99%E7%9B%AE%E7%9A%84" class="anchor"></a>Workshop goals and objectives / ワークショップでの目標・目的</h3>
+<div id="learning-goals--学習の目標" class="section level4">
 <h4 class="hasAnchor">
-<a href="#learning-goals" class="anchor"></a>Learning goals</h4>
+<a href="#learning-goals--%E5%AD%A6%E7%BF%92%E3%81%AE%E7%9B%AE%E6%A8%99" class="anchor"></a>Learning goals / 学習の目標</h4>
+<ul>
+<li>EBImageパッケージの基本的な使い方を習得する</li>
+<li>BioImageDbsを使った画像データ取得を習得する</li>
+<li>rMiWを使った、Deep learningによる画像セグメンテーションの基本ワークフローを習得する</li>
+<li>Keras文法を用いた、U-NETモデルの構築を経験する</li>
+<li>多次元アレイのデータ処理に慣れる</li>
+</ul>
 </div>
-<div id="learning-objectives" class="section level4">
+<div id="learning-objectives--学習の目的" class="section level4">
 <h4 class="hasAnchor">
-<a href="#learning-objectives" class="anchor"></a>Learning objectives</h4>
+<a href="#learning-objectives--%E5%AD%A6%E7%BF%92%E3%81%AE%E7%9B%AE%E7%9A%84" class="anchor"></a>Learning objectives / 学習の目的</h4>
+<ul>
+<li>Rにおける画像セグメンテーションの基本ワークフローを学ぶ</li>
+<li>Deep learningによる画像定量を始める初めのステップ</li>
+</ul>
 </div>
 </div>
 </div>
-<div id="execution-environment" class="section level2">
+<div id="execution-environment--実行環境" class="section level2">
 <h2 class="hasAnchor">
-<a href="#execution-environment" class="anchor"></a>Execution environment</h2>
+<a href="#execution-environment--%E5%AE%9F%E8%A1%8C%E7%92%B0%E5%A2%83" class="anchor"></a>Execution environment / 実行環境</h2>
 <p>You can get access to the <a href="http://app.orchestra.cancerdatasci.org/1">cloud platform</a> for the beginning.</p>
 <p>And then, you choose the “Introduction to Bioimage Analysis” workshop as below.</p>
+<p>本ワークショップは、<a href="http://app.orchestra.cancerdatasci.org/1">cloud platform</a>を使って行います。</p>
+<p>各自、Orchestra環境にログインして、所定のイメージをランチしてください。</p>
 <p><img src="inst/images/pic.png" alt="cloud"></p>
 </div>
 </div>
@@ -222,7 +232,7 @@
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small>Artistic License 2.0.</small></li>
+<li><small><a href="https://www.r-project.org/Licenses/Artistic-2.0">Artistic-2.0</a></small></li>
 </ul>
 </div>
 <div class="developers">
@@ -232,13 +242,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/actions"><img src="https://github.com/kumeS/biocasia2021-workshop-ja-image/.github/workflows/basic_checks.yaml/badge.svg" alt="R build status"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
