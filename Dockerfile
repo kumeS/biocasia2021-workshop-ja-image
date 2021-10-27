@@ -10,7 +10,7 @@ RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocMan
 
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(c('ExperimentHub', 'BioImageDbs', 'EBImage'), ask=FALSE); devtools::install_github('kumeS/rMiW', build_vignettes=FALSE)"
 
-
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install.packages('R.cache')"
 
 
 
