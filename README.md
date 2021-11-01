@@ -1,21 +1,23 @@
-# Introduction to Bioimage Analysis using R in [BioC Asia 2021 Workshop](https://biocasia2021.bioconductor.org/workshops/)
+# Introduction to Bioimage Analysis using R / Rにおけるバイオ画像解析入門
+
+[BioC Asia 2021 Workshop](https://biocasia2021.bioconductor.org/workshops/)
 
 ## Author/Instructor
 
 -   [Satoshi Kume](https://kumes.github.io/skume-Biography/skume-Biography.html) (<satoshi.kume.1984 at gmail.com>)
 
-## Key resources
+## Key resources / 関連リソース
 
 -   **GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)**
 -   **Docker image: [Docker Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)**
 -   **Workshop material: [pkgdown website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
 -   **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
 
-## Vignettes
+## Vignettes 
 
 - [01. Providing a basic workflow for microscopy-based images](https://kumes.github.io/biocasia2021-workshop-ja-image/articles/rMiW_01_Basic.html)
 
-## Workshop description
+## Workshop description / 概要
 
 This workshop covers basic methods of the image processing and image analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” package. Using this dataset, we perform a supervised image segmentation using the U-NET model, one of deep learning models, provided by the rMiW package.
 
@@ -30,13 +32,15 @@ This workshop covers basic methods of the image processing and image analysis in
 
 These packages are the focus of this workshop: / このワークショップでは、これらのパッケージに焦点を当てます。
 
--   **[EBImage](https://bioconductor.org/packages/release/bioc/html/EBImage.html)**
--   **[BioImageDbs](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)**
--   **[rMiW](https://github.com/kumeS/rMiW)**
+-   **[EBImage: Image processing and analysis toolbox for R](https://bioconductor.org/packages/release/bioc/html/EBImage.html)**
+-   **[BioImageDbs: Bio- and biomedical imaging dataset for machine learning and deep learning (for ExperimentHub)](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)**
+-   **[rMiW: For providing a microscopy-based image analysis workflow](https://github.com/kumeS/rMiW)**
 
 Please see the workshop
 [`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)
-for a full list of dependencies. / 詳細は、ワークショップの
+for a full list of dependencies. 
+
+詳細は、ワークショップの
 [`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)ファイルを見てください。
 
 ### Time outline / タイムテーブル
@@ -56,19 +60,21 @@ for a full list of dependencies. / 詳細は、ワークショップの
 | BioImageDbsとrMiWを用いた画像セグメンテーション |  20 分 |
 | 質疑応答                                        |  10 分 |
 
-### Workshop objectives / ワークショップでの目的 
+### Workshop goals / ワークショップでの目標 
 
-#### Learning objectives / 学習の目的
+#### Learning goals / 学習の目標
 
-- Rにおける画像セグメンテーションの基本ワークフローを学ぶ
-- Deep learningによる画像定量を始める初めのステップ
+- Learn the basic usage of the EBImage package
+- Learn to use BioImageDbs package to acquire image data from experimentHub
+- Learn the basic workflow for image segmentation (i.e., U-Net model)
+  - Be familiar with data processing of multi-dimensional R arrays
+  - Experience the workflow of U-NET model construction using Keras grammar in R
 
 - EBImageパッケージの基本的な使い方を習得する
-- BioImageDbsを使った画像データ取得を習得する
-- rMiWを使った、Deep learningによる画像セグメンテーションの基本ワークフローを習得する
-- Keras文法を用いた、U-NETモデルの構築を経験する
-- 多次元アレイのデータ処理に慣れる
-
+- BioImageDbsを使って、experimentalHubからの画像データ取得を習得する
+- 画像セグメンテーション(i.e. U-Net model)の基本ワークフローを習得する
+  - 多次元アレイのデータ処理に慣れる
+  - R/Keras文法を使った、U-NETモデルの構築の流れを経験する
 
 ## Execution environment / 実行環境
 
@@ -82,8 +88,4 @@ And then, you choose the "Introduction to Bioimage Analysis" workshop as below.
 
 ![cloud](inst/images/pic.png)
 
-
-```{r}
-knitr::include_url("https://www.slideshare.net/slideshow/embed_code/key/aCQxCPihKjMxYk")
-```
 
