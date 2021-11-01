@@ -22,10 +22,10 @@ RoxygenNote: 7.1.0
 Depends: R (>= 4.0.0)
 Imports: Biobase,
     BiocStyle,
-    EBImage,
     knitr,
     rmarkdown,
     pkgdown
+Suggests: EBImage
 URL: https://github.com/kumeS/biocasia2021-workshop-ja-image
 VignetteBuilder: knitr
 DockerImage: skume/biocasia2021-workshop-ja-image:latest
