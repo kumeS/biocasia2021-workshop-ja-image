@@ -21,8 +21,8 @@ editor_options:
 BiocStyle::markdown()
 ```
 
-**Last modified:** `r file.info("rMiW_01_Basic.Rmd")$mtime`<br/>
-**Compiled**: `r Sys.time()`
+**Last modified:** `r as.POSIXlt(file.info("rMiW_01_Basic.Rmd")$mtime, format="%Y-%m-%d %H:%M:%S", tz="Japan")`<br/>
+**Compiled**: `r as.POSIXlt(x=Sys.time(), format="%Y-%m-%d %H:%M:%S", tz="Japan")`
 
 # Getting started
 
