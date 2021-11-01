@@ -7,7 +7,7 @@ template:
     #ganalytics: UA-99999999-9
 
 home:
-  title: "introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese)."
+  title: "introduction to bioimage analysis using R in BioC Asia 2021 workshop"
   type: inverse
 
 

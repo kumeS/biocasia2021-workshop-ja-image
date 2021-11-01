@@ -1,4 +1,4 @@
-# Introduction to Bioimage Analysis using R in [Bioc Asia 2021 Workshop](https://biocasia2021.bioconductor.org/workshops/)
+# Introduction to Bioimage Analysis using R in [BioC Asia 2021 Workshop](https://biocasia2021.bioconductor.org/workshops/)
 
 ## Author/Instructor
 
@@ -6,11 +6,9 @@
 
 ## Key resources
 
--   GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)
--   Docker image: [Docker
-    Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)
--   **Workshop material: [pkgdown
-    website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
+-   **GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)**
+-   **Docker image: [Docker Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)**
+-   **Workshop material: [pkgdown website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
 -   **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
 
 ## Workshop description
@@ -23,7 +21,7 @@ This workshop covers basic methods of the image processing and image analysis in
 ### Pre-requisites / 事前要件
 
 - Basic knowledge of R syntax. / Rの構文の基礎知識
-- Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基本的な知識と操作
+- Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基礎知識と操作
 
 ### *R* / *Bioconductor* packages used / 使用パッケージ
 

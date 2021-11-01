@@ -1,6 +1,6 @@
 Package: BiocAsia2021image
 Title: Introduction to bioimage analysis using R in Bioc Asia 2021 workshop
-Version: 0.9.1
+Version: 0.9.2
 Authors@R: 
     person(given = "Satoshi",
            family = "Kume",
@@ -8,7 +8,7 @@ Authors@R:
            email = "satoshi.kume.1984@gmail.com",
            comment = c(ORCID = "0000-0001-7481-2843"))
 Description: This workshop item serves for introduction to bioimage analysis 
-    using R in Bioc Asia 2021 workshop (japanese) [<https://kumes.github.io/biocasia2021-workshop-ja-image/>].
+    using R in Bioc Asia 2021 workshop [<https://kumes.github.io/biocasia2021-workshop-ja-image/>].
     This workshop covers basic methods of the image processing and image 
     analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. 
     In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” 
