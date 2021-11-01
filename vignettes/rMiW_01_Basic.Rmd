@@ -1,24 +1,18 @@
 ---
 title: "rMiW: 01. Providing a basic workflow for microscopy-based images"
-author: 
-- name: Satoshi Kume
-  email: satoshi.kume.1984@gmail.com
-date: "`r Sys.Date()`"
-graphics: no
-package: EBImage, rMiW
-output:
-    BiocStyle::html_document:
-        toc_float: false
+author: Satoshi Kume^[satoshi.kume.1984@gmail.com]
+output: rmarkdown::html_vignette
 vignette: >
-    %\VignetteIndexEntry{rMiW}
-    %\VignetteEncoding{UTF-8}
-    %\VignetteEngine{knitr::rmarkdown}
-editor_options: 
-  chunk_output_type: console
+  %\VignetteIndexEntry{rMiW: 01. Providing a basic workflow for microscopy-based images}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r style, echo = FALSE, results = 'asis', message=FALSE}
-BiocStyle::markdown()
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 ```
 
 **Last modified:** `r file.info("rMiW_01_Basic.Rmd")$mtime`<br/>
