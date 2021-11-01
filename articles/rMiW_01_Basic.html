@@ -56,9 +56,6 @@
 <li>
       <a href="../articles/rMiW_01_Basic.html">rMiW: 01. Providing a basic workflow for microscopy-based images</a>
     </li>
-    <li>
-      <a href="../articles/rMiW_01_Basic_Bioc.html">rMiW: 01. Providing a basic workflow for microscopy-based images</a>
-    </li>
   </ul>
 </li>
       </ul>
@@ -83,9 +80,11 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>rMiW: 01. Providing a basic workflow for microscopy-based images</h1>
-                        <h4 class="author">Satoshi Kume<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
-</h4>
-            
+                        <h4 class="author">Satoshi Kume</h4>
+                  <a class="author_email" href="mailto:#"></a><a href="mailto:satoshi.kume.1984@gmail.com" class="email">satoshi.kume.1984@gmail.com</a>
+      
+                  
+            <h4 class="date">2021-11-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/vignettes/rMiW_01_Basic.Rmd"><code>vignettes/rMiW_01_Basic.Rmd</code></a></small>
       <div class="hidden name"><code>rMiW_01_Basic.Rmd</code></div>
@@ -94,13 +93,30 @@
 
     
     
-<p><strong>Last modified:</strong> 2021-11-01 08:44:23<br><strong>Compiled</strong>: 2021-11-01 08:48:01</p>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector("h1").className = "title";
+});
+</script><script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.links;  
+  for (var i = 0, linksLength = links.length; i < linksLength; i++)
+    if (links[i].hostname != window.location.hostname)
+      links[i].target = '_blank';
+});
+</script><p><strong>Last modified:</strong> 2021-11-01 08:45:49<br><strong>Compiled</strong>: 2021-11-01 08:49:24</p>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#Load packages</span>
+<code class="sourceCode R"><span class="co">#Install packages</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"devtools"</span>, <span class="st">"BiocManager"</span><span class="op">)</span>, repos<span class="op">=</span><span class="st">"http://cran.r-project.org"</span><span class="op">)</span>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"EBImage"</span>, <span class="st">"BioImageDbs"</span><span class="op">)</span>, force <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span> <span class="st">"kumeS/rMiW"</span>, force <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span>
+
+<span class="co">#Load packages</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">EBImage</span><span class="op">)</span>
+<span class="co">#remove.packages("rMiW")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rMiW</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="import-a-kidney-image-from-rmiw" class="section level1">
@@ -243,47 +259,51 @@
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Img</span><span class="op">)</span>
 
 <span class="co">#Resize 1024x1024 and perform 3 clustering </span>
-<span class="va">ImgClus3</span> <span class="op">&lt;-</span> <span class="fu">Img2DClustering</span><span class="op">(</span>x<span class="op">=</span><span class="va">Img</span>, Cluster <span class="op">=</span> <span class="fl">3</span>, XY<span class="op">=</span><span class="fl">1024</span><span class="op">)</span>
+<span class="va">ImgClus3</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">Img2DClustering</span><span class="op">(</span>x<span class="op">=</span><span class="va">Img</span>, Cluster <span class="op">=</span> <span class="fl">3</span>, XY<span class="op">=</span><span class="fl">1024</span><span class="op">)</span>
 
 <span class="co">#Visualize as a color image</span>
-<span class="fu">rasterMiW</span><span class="op">(</span><span class="va">ImgClus3</span>, method <span class="op">=</span> <span class="st">"raster"</span><span class="op">)</span></code></pre></div>
+<span class="fu">rMiW</span><span class="fu">::</span><span class="fu">rasterMiW</span><span class="op">(</span><span class="va">ImgClus3</span>, method <span class="op">=</span> <span class="st">"raster"</span><span class="op">)</span>
+
+<span class="co">#Barplot</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html">barplot</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">ImgClus3</span><span class="op">$</span><span class="va">Cluster</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="session-information" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session information</h1>
-<pre><code>#&gt; R version 4.1.1 (2021-08-10)
-#&gt; Platform: x86_64-pc-linux-gnu (64-bit)
-#&gt; Running under: Ubuntu 20.04.3 LTS
-#&gt; 
-#&gt; Matrix products: default
-#&gt; BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
-#&gt; 
-#&gt; locale:
-#&gt;  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-#&gt;  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-#&gt;  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             
-#&gt;  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-#&gt;  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-#&gt; [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-#&gt; 
-#&gt; attached base packages:
-#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
-#&gt; 
-#&gt; loaded via a namespace (and not attached):
-#&gt;  [1] rprojroot_2.0.2   digest_0.6.28     crayon_1.4.2      R6_2.5.1         
-#&gt;  [5] magrittr_2.0.1    evaluate_0.14     stringi_1.7.5     rlang_0.4.12     
-#&gt;  [9] cachem_1.0.6      fs_1.5.0          ragg_1.2.0        rmarkdown_2.11   
-#&gt; [13] pkgdown_1.6.1     textshaping_0.3.6 desc_1.4.0        tools_4.1.1      
-#&gt; [17] stringr_1.4.0     yaml_2.2.1        xfun_0.27         fastmap_1.1.0    
-#&gt; [21] compiler_4.1.1    systemfonts_1.0.3 memoise_2.0.0     htmltools_0.5.2  
-#&gt; [25] knitr_1.36</code></pre>
-</div>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn1"><p><a href="mailto:satoshi.kume.1984@gmail.com" class="email">satoshi.kume.1984@gmail.com</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<pre><code>## R version 4.1.1 (2021-08-10)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.3 LTS
+## 
+## Matrix products: default
+## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] BiocStyle_2.20.2
+## 
+## loaded via a namespace (and not attached):
+##  [1] bookdown_0.24       rprojroot_2.0.2     digest_0.6.28      
+##  [4] crayon_1.4.2        R6_2.5.1            magrittr_2.0.1     
+##  [7] evaluate_0.14       stringi_1.7.5       rlang_0.4.12       
+## [10] cachem_1.0.6        fs_1.5.0            jquerylib_0.1.4    
+## [13] ragg_1.2.0          rmarkdown_2.11      pkgdown_1.6.1      
+## [16] textshaping_0.3.6   desc_1.4.0          tools_4.1.1        
+## [19] stringr_1.4.0       yaml_2.2.1          xfun_0.27          
+## [22] fastmap_1.1.0       compiler_4.1.1      systemfonts_1.0.3  
+## [25] BiocManager_1.30.16 memoise_2.0.0       htmltools_0.5.2    
+## [28] knitr_1.36</code></pre>
 </div>
   </div>
 

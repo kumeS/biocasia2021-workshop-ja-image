@@ -3,8 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   rMiW_01_Basic: rMiW_01_Basic.html
-  rMiW_01_Basic_Bioc: rMiW_01_Basic_Bioc.html
-last_built: 2021-11-01T08:47Z
+last_built: 2021-11-01T08:49Z
 urls:
   reference: https://kumeS.github.io/biocasia2021-workshop-ja-image/reference
   article: https://kumeS.github.io/biocasia2021-workshop-ja-image/articles
