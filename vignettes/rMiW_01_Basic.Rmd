@@ -50,7 +50,7 @@ Here, `::` in R script indicates an explicit relation between the package and th
 EBImage::display(Img, method = "raster")
 ```
 
-```{r Fig001, out.width = '75%', fig.cap = "Mouse01_Kid_x20_z0_RR01.png", echo = FALSE}
+```{r Fig001, out.width = '75%', fig.cap = "Mouse01_Kid_x20_z0_RR01.png", echo = FALSE, eval=FALSE}
 ##Skip execution for this chunk.
 options(EBImage.display = "raster")
 file <- system.file("extdata", "Mouse01_Kid_x20_z0_RR01.png", package="rMiW")
@@ -75,7 +75,7 @@ GrayImg <- toGrayScale(Img, mode = "luminance")
 EBImage::display(GrayImg, method = "raster")
 ```
 
-```{r Fig002, out.width = '75%', fig.cap = "The gray image of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE}
+```{r Fig002, out.width = '75%', fig.cap = "The gray image of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE, eval=FALSE}
 ##Skip execution for this chunk.
 file <- system.file("extdata", "Mouse01_Kid_x20_z0_RR01.png", package="rMiW")
 img <- rMiW::toGrayScale(EBImage::resize(EBImage::readImage(files = file), w = 500), mode = "luminance")
@@ -117,7 +117,7 @@ EBImage::display(Img70, method = "raster")
 text(x = dim(Img70)[1]/20, y = dim(Img70)[2]/10, label = "50% area size", adj = c(0,0), col = "black", cex = 1.5)
 ```
 
-```{r Fig003, out.width = '100%', fig.cap = "The resized images of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE}
+```{r Fig003, out.width = '100%', fig.cap = "The resized images of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE, eval=FALSE}
 ##Skip execution for this chunk.
 #Read image
 file <- system.file("extdata", "Mouse01_Kid_x20_z0_RR01.png", package="rMiW")
@@ -167,7 +167,7 @@ EBImage::display(Imgflop, method = "raster")
 text(x = dim(Imgflop)[1]/20, y = dim(Imgflop)[2]/10, label = "Flop", adj = c(0,0), col = "black", cex = 1.5)
 ```
 
-```{r Fig004, out.width = '100%', fig.cap = "The rotated images of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE}
+```{r Fig004, out.width = '100%', fig.cap = "The rotated images of Mouse01_Kid_x20_z0_RR01.png", echo = FALSE, eval=FALSE}
 ##Skip execution for this chunk.
 #Read image
 file <- system.file("extdata", "Mouse01_Kid_x20_z0_RR01.png", package="rMiW")
@@ -244,7 +244,7 @@ rasterMiW(ImgClus3, method = "raster")
 
 ```
 
-```{r Fig005, out.width = '100%', fig.cap = "Results of three clustering with k-means for Mouse01_Kid_x20_z0_RR01.png", echo = FALSE}
+```{r Fig005, out.width = '100%', fig.cap = "Results of three clustering with k-means for Mouse01_Kid_x20_z0_RR01.png", eval=FALSE, echo = FALSE}
 ##Skip execution for this chunk.
 
 #Read image: delete the 4th element of 3th dimension
