@@ -13,8 +13,7 @@
 
 ## Vignettes
 
-- [01. Providing a basic workflow for microscopy-based images](https://kumes.github.io/biocasia2021-workshop-ja-image/vignettes/rMiW_01_Basic.html)
-
+- [01. Providing a basic workflow for microscopy-based images](https://kumes.github.io/biocasia2021-workshop-ja-image/vignettes/rMiW_01_Basic.Rmd)
 
 
 ## Workshop description
