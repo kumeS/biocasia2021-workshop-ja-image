@@ -5,15 +5,15 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese). • BiocAsia2021image</title>
+<title>introduction to bioimage analysis using R in BioC Asia 2021 workshop • BiocAsia2021image</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="introduction to bioimage analysis using R in Bioc Asia 2021 workshop (japanese).">
+<script src="pkgdown.js"></script><meta property="og:title" content="introduction to bioimage analysis using R in BioC Asia 2021 workshop">
 <meta property="og:description" content="This workshop item serves for introduction to bioimage analysis 
-    using R in Bioc Asia 2021 workshop (japanese) [&lt;https://kumes.github.io/biocasia2021-workshop-ja-image/&gt;].
+    using R in Bioc Asia 2021 workshop [&lt;https://kumes.github.io/biocasia2021-workshop-ja-image/&gt;].
     This workshop covers basic methods of the image processing and image 
     analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. 
     In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” 
@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">BiocAsia2021image</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.3</span>
       </span>
     </div>
 
@@ -60,7 +60,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/workshop_example.html">An Example Workshop</a>
+      <a href="articles/rMiW_01_Basic.html">rMiW: 01. Providing a basic workflow for microscopy-based images</a>
+    </li>
+    <li>
+      <a href="articles/rMiW_01_Basic_Bioc.html">rMiW: 01. Providing a basic workflow for microscopy-based images</a>
     </li>
   </ul>
 </li>
@@ -86,7 +89,7 @@
   <div class="contents col-md-9">
 <div id="introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop" class="anchor"></a>Introduction to Bioimage Analysis using R in <a href="https://biocasia2021.bioconductor.org/workshops/">Bioc Asia 2021 Workshop</a>
+<a href="#introduction-to-bioimage-analysis-using-r-in-bioc-asia-2021-workshop" class="anchor"></a>Introduction to Bioimage Analysis using R in <a href="https://biocasia2021.bioconductor.org/workshops/">BioC Asia 2021 Workshop</a>
 </h1></div>
 <div id="authorinstructor" class="section level2">
 <h2 class="hasAnchor">
@@ -100,12 +103,17 @@
 <h2 class="hasAnchor">
 <a href="#key-resources" class="anchor"></a>Key resources</h2>
 <ul>
-<li>GitHub repo.: <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image">kumeS / biocasia2021-workshop-ja-image</a>
-</li>
-<li>Docker image: <a href="https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image">Docker Hub</a>
-</li>
+<li><strong>GitHub repo.: <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image">kumeS / biocasia2021-workshop-ja-image</a></strong></li>
+<li><strong>Docker image: <a href="https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image">Docker Hub</a></strong></li>
 <li><strong>Workshop material: <a href="https://kumes.github.io/biocasia2021-workshop-ja-image/">pkgdown website</a></strong></li>
 <li><strong>Cloud platform: <a href="http://app.orchestra.cancerdatasci.org/1">Orchestra</a></strong></li>
+</ul>
+</div>
+<div id="vignettes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignettes" class="anchor"></a>Vignettes</h2>
+<ul>
+<li><a href="https://kumes.github.io/biocasia2021-workshop-ja-image/vignettes/rMiW_01_Basic.html">01. Providing a basic workflow for microscopy-based images</a></li>
 </ul>
 </div>
 <div id="workshop-description" class="section level2">
@@ -118,7 +126,7 @@
 <a href="#pre-requisites--%E4%BA%8B%E5%89%8D%E8%A6%81%E4%BB%B6" class="anchor"></a>Pre-requisites / 事前要件</h3>
 <ul>
 <li>Basic knowledge of R syntax. / Rの構文の基礎知識</li>
-<li>Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基本的な知識と操作</li>
+<li>Basic knowledge and operations of multi-dimensional R array. / 多次元アレイの基礎知識と操作</li>
 </ul>
 </div>
 <div id="r--bioconductor-packages-used--使用パッケージ" class="section level3">
