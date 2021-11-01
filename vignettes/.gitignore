@@ -1,2 +1,5 @@
 *.R
-rMiW_01_Basic_BioC.Rmd
+*_BioC.Rmd
+*_BioC.html
+
+

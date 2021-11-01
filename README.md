@@ -1,17 +1,16 @@
 # Introduction to Bioimage Analysis using R / Rにおけるバイオ画像解析入門
 
-  [BioC Asia 2021 Workshop HP](https://biocasia2021.bioconductor.org/workshops/)
-
 ## Author/Instructor
 
 -   [Satoshi Kume](https://kumes.github.io/skume-Biography/skume-Biography.html) (<satoshi.kume.1984 at gmail.com>)
 
 ## Key resources / 関連リソース
 
--   **GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)**
--   **Docker image: [Docker Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)**
--   **Workshop material: [pkgdown website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
--   **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
+- **[BioC Asia 2021 Workshop HP](https://biocasia2021.bioconductor.org/workshops/)**
+- **GitHub repo.: [kumeS / biocasia2021-workshop-ja-image](https://github.com/kumeS/biocasia2021-workshop-ja-image)**
+- **Docker image: [Docker Hub](https://hub.docker.com/repository/docker/skume/biocasia2021-workshop-ja-image)**
+- **Workshop material: [pkgdown website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
+- **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
 
 ## Vignettes 
 
@@ -45,7 +44,7 @@ for a full list of dependencies.
 
 ### Time outline / タイムテーブル
 
-| Activity (English)                             | Time   |
+| Activity                                       | Time   |
 |------------------------------------------------|--------|
 | Introduction                                   | 10 min |
 | Basic image processing using EBImage           | 20 min |
@@ -53,7 +52,7 @@ for a full list of dependencies.
 | Q&A                                            | 10 min |
 
 
-| 内容 (日本語)                                   |  時間  |
+| 内容                                            |  時間  |
 |-------------------------------------------------|--------|
 | イントロダクション                              |  10 分 |
 | EBImageを用いた基本的な画像処理                 |  20 分 |
@@ -62,13 +61,15 @@ for a full list of dependencies.
 
 ### Workshop goals / ワークショップでの目標 
 
-#### Learning goals / 学習の目標
+#### Learning goals
 
 - Learn the basic usage of the EBImage package
 - Learn to use BioImageDbs package to acquire image data from experimentHub
 - Learn the basic workflow for image segmentation (i.e., U-Net model)
   - Be familiar with data processing of multi-dimensional R arrays
   - Experience the workflow of U-NET model construction using Keras grammar in R
+
+#### 学習の目標
 
 - EBImageパッケージの基本的な使い方を習得する
 - BioImageDbsを使って、experimentalHubからの画像データ取得を習得する
