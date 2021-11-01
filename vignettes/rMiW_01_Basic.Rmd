@@ -45,7 +45,7 @@ observing the kidney tissue of C57BL/6J mouse (male, 10 week-old) stained by H&E
 
 ## Read image
 
-```{r echo=TRUE, eval=TRUE}
+```{r echo=TRUE, eval=FALSE}
 file <- system.file("extdata", "Mouse01_Kid_x20_z0_RR01.png", package="rMiW")
 
 #Read image
@@ -57,7 +57,7 @@ Here, `::` in R script indicates an explicit relation between the package and th
 
 ## Visualization
 
-```{r echo=TRUE, eval=TRUE}
+```{r echo=TRUE, eval=FALSE}
 #Visualization
 EBImage::display(Img, method = "raster")
 ```
