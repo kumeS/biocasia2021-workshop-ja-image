@@ -11,6 +11,11 @@
 -   **Workshop material: [pkgdown website](https://kumes.github.io/biocasia2021-workshop-ja-image/)**
 -   **Cloud platform: [Orchestra](http://app.orchestra.cancerdatasci.org/1)**
 
+## Vignettes
+
+- [rMiW_01_Basic](https://kumes.github.io/biocasia2021-workshop-ja-image/vignettes/rMiW_01_Basic.html)
+
+
 ## Workshop description
 
 This workshop covers basic methods of the image processing and image analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” package. Using this dataset, we perform a supervised image segmentation using the U-NET model, one of deep learning models, provided by the rMiW package.
