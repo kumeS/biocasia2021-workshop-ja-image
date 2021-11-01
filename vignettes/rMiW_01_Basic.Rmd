@@ -1,18 +1,24 @@
 ---
 title: "rMiW: 01. Providing a basic workflow for microscopy-based images"
-author: Satoshi Kume^[satoshi.kume.1984@gmail.com]
-output: rmarkdown::html_vignette
+author: 
+- name: Satoshi Kume
+  email: satoshi.kume.1984@gmail.com
+date: "`r Sys.Date()`"
+graphics: no
+package: EBImage, rMiW, BiocStyle
+output:
+    BiocStyle::html_document:
+        toc_float: false
 vignette: >
-  %\VignetteIndexEntry{rMiW: 01. Providing a basic workflow for microscopy-based images}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{rMiW}
+    %\VignetteEncoding{UTF-8}
+    %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r style, echo = FALSE, results = 'asis', message=FALSE}
+BiocStyle::markdown()
 ```
 
 **Last modified:** `r file.info("rMiW_01_Basic.Rmd")$mtime`<br/>
@@ -21,8 +27,14 @@ knitr::opts_chunk$set(
 # Getting started
 
 ```{r echo=TRUE, eval=FALSE}
+#Install packages
+install.packages(c("devtools", "BiocManager"), repos="http://cran.r-project.org")
+BiocManager::install(c("EBImage", "BioImageDbs"), force = TRUE )
+devtools::install_github( "kumeS/rMiW", force = TRUE )
+
 #Load packages
 library(EBImage)
+#remove.packages("rMiW")
 library(rMiW)
 ```
 
@@ -237,11 +249,14 @@ Img <- readRDS(system.file("extdata", "Mouse01_Kid_x20_z0_RR01.Rds", package="rM
 str(Img)
 
 #Resize 1024x1024 and perform 3 clustering 
-ImgClus3 <- Img2DClustering(x=Img, Cluster = 3, XY=1024)
+ImgClus3 <- rMiW::Img2DClustering(x=Img, Cluster = 3, XY=1024)
 
 #Visualize as a color image
-rasterMiW(ImgClus3, method = "raster")
+rMiW::rasterMiW(ImgClus3, method = "raster")
 
+#Barplot
+barplot()
+table(unlist(ImgClus3$Cluster))
 ```
 
 ```{r Fig005, out.width = '100%', fig.cap = "Results of three clustering with k-means for Mouse01_Kid_x20_z0_RR01.png", eval=FALSE, echo = FALSE}
