@@ -28,9 +28,9 @@ BiocStyle::markdown()
 
 ```{r echo=TRUE, eval=FALSE}
 #Install packages
-install.packages(c("devtools", "BiocManager"), repos="http://cran.r-project.org")
-BiocManager::install(c("EBImage", "BioImageDbs"), force = TRUE )
-devtools::install_github( "kumeS/rMiW", force = TRUE )
+install.packages(c("devtools", "BiocManager", "DiagrammeR"), repos="http://cran.r-project.org")
+BiocManager::install(c("ExperimentHub", "EBImage", "BioImageDbs") )
+devtools::install_github( "kumeS/rMiW" )
 
 #Load packages
 library(EBImage)
