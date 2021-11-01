@@ -27,6 +27,11 @@ BiocStyle::markdown()
 # Getting started
 
 ```{r echo=TRUE, eval=FALSE}
+#Install packages
+install.packages("BiocManager")
+BiocManager::install("EBImage")
+BiocManager::install("BioImageDbs")
+
 #Load packages
 library(EBImage)
 library(rMiW)
@@ -243,11 +248,14 @@ Img <- readRDS(system.file("extdata", "Mouse01_Kid_x20_z0_RR01.Rds", package="rM
 str(Img)
 
 #Resize 1024x1024 and perform 3 clustering 
-ImgClus3 <- Img2DClustering(x=Img, Cluster = 3, XY=1024)
+ImgClus3 <- rMiW::Img2DClustering(x=Img, Cluster = 3, XY=1024)
 
 #Visualize as a color image
-rasterMiW(ImgClus3, method = "raster")
+rMiW::rasterMiW(ImgClus3, method = "raster")
 
+#Barplot
+barplot()
+table(unlist(ImgClus3$Cluster))
 ```
 
 ```{r Fig005, out.width = '100%', fig.cap = "Results of three clustering with k-means for Mouse01_Kid_x20_z0_RR01.png", eval=FALSE, echo = FALSE}
