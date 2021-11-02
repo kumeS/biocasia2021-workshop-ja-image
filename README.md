@@ -2,7 +2,7 @@
 
 ## Author/Instructor
 
--   [Satoshi Kume](https://kumes.github.io/skume-Biography/skume-Biography.html) (<satoshi.kume.1984 at gmail.com>)
+-   [Satoshi Kume](https://kumes.github.io/skume-Biography/skume-Biography.html) (<satoshi.kume.1984 at gmail.com>) / 久米 慧嗣
 
 ## Key resources / 関連リソース
 
@@ -46,18 +46,18 @@ for a full list of dependencies.
 
 | Activity                                       | Time   |
 |------------------------------------------------|--------|
-| Introduction                                   | 10 min |
-| Basic image processing using EBImage           | 20 min |
+| Introduction                                   | 20 min |
+| Basic image processing using EBImage           | 15 min |
 | Image segmentation using BioImageDbs and rMiW  | 20 min |
-| Q&A                                            | 10 min |
+| Q&A                                            |  5 min |
 
 
 | 内容                                            |  時間  |
 |-------------------------------------------------|--------|
-| イントロダクション                              |  10 分 |
-| EBImageを用いた基本的な画像処理                 |  20 分 |
+| イントロダクション                              |  20 分 |
+| EBImageを用いた基本的な画像処理                 |  15 分 |
 | BioImageDbsとrMiWを用いた画像セグメンテーション |  20 分 |
-| 質疑応答                                        |  10 分 |
+| 質疑応答                                        |   5 分 |
 
 ### Workshop goals / ワークショップでの目標 
 

@@ -38,6 +38,12 @@ library(EBImage)
 library(rMiW)
 ```
 
+## Optional: Update (ver 3.14)
+
+```{r echo=TRUE, eval=FALSE}
+BiocManager::install(version = "3.14")
+```
+
 # Import a kidney image from rMiW
 
 The displayed image (`Mouse01_Kid_x20_z0_RR01.png') is an image of whole slide imaging (WSI) for 
