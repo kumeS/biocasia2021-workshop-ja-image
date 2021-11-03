@@ -16,6 +16,9 @@
 
 - [01. Providing a basic workflow for microscopy-based images](https://kumes.github.io/rMiW/vignettes/rMiW_01_Basic_eval.html)
 
+- [02. rMiW & BioImageDbs for a workflow for microscopy-based image analysis and U-Net model](https://kumes.github.io/rMiW/vignettes/rMiW_02_BioImageDbs_eval.html)
+
+
 ## Workshop description / 概要
 
 This workshop covers basic methods of the image processing and image analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” package. Using this dataset, we perform a supervised image segmentation using the U-NET model, one of deep learning models, provided by the rMiW package.
