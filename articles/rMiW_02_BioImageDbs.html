@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (links[i].hostname != window.location.hostname)
       links[i].target = '_blank';
 });
-</script><p><strong>Last modified:</strong> 2021-11-03 20:19:25<br><strong>Compiled</strong>: 2021-11-03 20:20:50</p>
+</script><p><strong>Last modified:</strong> 2021-11-03 21:44:52<br><strong>Compiled</strong>: 2021-11-03 21:46:17</p>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
@@ -133,17 +133,24 @@ document.addEventListener("DOMContentLoaded", function() {
 <code class="sourceCode R"><span class="co">#On MacOSX</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/reticulate">reticulate</a></span><span class="op">)</span>
 <span class="co">#reticulate::install_miniconda(force = T)</span>
-<span class="co">#reticulate::use_python("~Library/r-miniconda/envs/r-reticulate/bin/python")</span>
+<span class="co">#reticulate::use_python("~/Library/r-miniconda/envs/r-reticulate/bin/python")</span>
 <span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_config.html">py_config</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co">#install pydot</span>
-<span class="co">#reticulate::py_install("pydot")</span></code></pre></div>
+<span class="co">#reticulate::py_install("pydot")</span>
+
+<span class="co">#On CentOS</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/reticulate">reticulate</a></span><span class="op">)</span>
+<span class="co">#reticulate::install_miniconda(force = T)</span>
+<span class="co">#reticulate::use_python("~/.local/share/r-miniconda/envs/r-reticulate/bin/python")</span>
+<span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_config.html">py_config</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="optional-install-python-packages-for-r-keras-tensorflow-ver-3-14" class="section level2">
 <h2 class="hasAnchor">
 <a href="#optional-install-python-packages-for-r-keras-tensorflow-ver-3-14" class="anchor"></a>Optional: install python packages for R keras / tensorflow (ver 3.14)</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">keras</span><span class="fu">::</span><span class="fu">install_keras</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="co">#For CPU</span>
+<span class="fu">keras</span><span class="fu">::</span><span class="fu">install_keras</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="optional-removes-all-files-in-the-cache-directory" class="section level2">
 <h2 class="hasAnchor">
@@ -332,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <span class="fu">keras</span><span class="fu">::</span><span class="fu">fit</span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, 
              y <span class="op">=</span> <span class="va">Y</span>,
              batch_size <span class="op">=</span> <span class="fl">2</span>,
-             epochs <span class="op">=</span> <span class="fl">50</span>,
+             epochs <span class="op">=</span> <span class="fl">2</span>,
              verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>Parameters:
@@ -340,6 +347,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>batch_size: Number of samples per gradient update / 1度に計算するサンプル数</li>
 <li>epochs: Number of epochs to train the model / エポック数:一つの訓練データを何回繰り返して学習させるか</li>
 <li>verbose: Verbosity mode (0 = silent, 1 = progress bar, 2 = one line per epoch) / 表示モード</li>
+</ul>
+</li>
+<li>Training Speed (3rd Nov 2021):
+<ul>
+<li>Orchestra: 15.7 s/step</li>
+<li>MacOSX (2.3 GHz quad-core Intel Core i7, KUME): 2.15 s/step</li>
+<li>GPU:</li>
 </ul>
 </li>
 </ul>
@@ -379,12 +393,14 @@ document.addEventListener("DOMContentLoaded", function() {
      <span class="op">)</span>
 
 <span class="co">#Re-fit</span>
+<span class="kw">if</span><span class="op">(</span><span class="cn">F</span><span class="op">)</span><span class="op">{</span>
 <span class="va">history</span> <span class="op">&lt;-</span> <span class="va">modelR</span> <span class="op">%&gt;%</span>
   <span class="fu">keras</span><span class="fu">::</span><span class="fu">fit</span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, 
              y <span class="op">=</span> <span class="va">Y</span>,
              batch_size <span class="op">=</span> <span class="fl">2</span>,
-             epochs <span class="op">=</span> <span class="fl">50</span>,
-             verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
+             epochs <span class="op">=</span> <span class="fl">1</span>,
+             verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 </div>
 </div>
 <div id="view-results" class="section level1">
@@ -426,14 +442,28 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">ImageView2D</span><span class="op">(</span><span class="va">X</span>,
             <span class="va">Y_pred</span>,
             ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.1</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>We can visualize the results using another function.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+<code class="sourceCode R"><span class="co">#Imge: 2</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
                  ImgArray_y<span class="op">=</span><span class="va">Y</span>,
                  ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
-                 ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+                 ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
+
+<span class="co">#Imge: 6</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="fl">6</span><span class="op">)</span>
+
+<span class="co">#Image: All</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">N</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="va">N</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 </div>
 </div>
 <div id="prediction-for-test-dataset-20-images" class="section level1">
@@ -466,19 +496,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <code class="sourceCode R"><span class="va">Test_Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR</span>, 
                                 x<span class="op">=</span><span class="va">Test_X</span><span class="op">)</span>
 
-<span class="co">#visualization 01</span>
-<span class="kw">for</span><span class="op">(</span><span class="va">n</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
-<span class="fu">ImageView2D</span><span class="op">(</span><span class="va">Test_X</span>,
-            <span class="va">Test_Y_pred</span>,
-            ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.1</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co">#visualization 02</span>
+<span class="co">#visualization</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">N</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
 <span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">Test_X</span>,
                  ImgArray_y<span class="op">=</span><span class="va">Test_Y</span>,
                  ImgArray_pred<span class="op">=</span><span class="va">Test_Y_pred</span>,
-                 ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
+                 ImgN<span class="op">=</span><span class="va">N</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 </div>
 </div>
 <div id="session-information" class="section level1 unnumbered">
