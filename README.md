@@ -76,7 +76,7 @@ for a full list of dependencies.
 
 | Activity                                       | Time   |
 |------------------------------------------------|--------|
-| Introduction                                   | 20 min |
+| Introduction and Outline Description (slides)  | 20 min |
 | Basic image processing using EBImage           | 15 min |
 | Image segmentation using BioImageDbs and rMiW  | 20 min |
 | Q&A                                            |  5 min |
@@ -84,7 +84,7 @@ for a full list of dependencies.
 
 | 内容                                            |  時間  |
 |-------------------------------------------------|--------|
-| イントロダクション                              |  20 分 |
+| イントロダクション & 概要説明 (スライド)        |  20 分 |
 | EBImageを用いた基本的な画像処理                 |  15 分 |
 | BioImageDbsとrMiWを用いた画像セグメンテーション |  20 分 |
 | 質疑応答                                        |   5 分 |
