@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocAsia2021image</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.4</span>
       </span>
     </div>
 
@@ -107,26 +107,23 @@ document.addEventListener("DOMContentLoaded", function() {
     if (links[i].hostname != window.location.hostname)
       links[i].target = '_blank';
 });
-</script><p><strong>Last modified:</strong> 2021-11-03 12:01:31<br><strong>Compiled</strong>: 2021-11-03 12:02:49</p>
+</script><p><strong>Last modified:</strong> 2021-11-03 13:04:15<br><strong>Compiled</strong>: 2021-11-03 13:05:21</p>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Install packages</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"devtools"</span>, <span class="st">"BiocManager"</span>, <span class="st">"DiagrammeR"</span><span class="op">)</span>, repos<span class="op">=</span><span class="st">"http://cran.r-project.org"</span><span class="op">)</span>
-<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ExperimentHub"</span>, <span class="st">"EBImage"</span>, <span class="st">"BioImageDbs"</span><span class="op">)</span> <span class="op">)</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span> <span class="st">"kumeS/rMiW"</span> <span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"devtools"</span>, <span class="st">"BiocManager"</span><span class="op">)</span>, repos<span class="op">=</span><span class="st">"http://cran.r-project.org"</span><span class="op">)</span>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"EBImage"</span>, <span class="st">"BioImageDbs"</span><span class="op">)</span>, force <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span> <span class="st">"kumeS/rMiW"</span>, force <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span>
 
 <span class="co">#Load packages</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">EBImage</span><span class="op">)</span>
 <span class="co">#remove.packages("rMiW")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rMiW</span><span class="op">)</span></code></pre></div>
-<div id="optional-update-ver-3-14" class="section level2">
-<h2 class="hasAnchor">
-<a href="#optional-update-ver-3-14" class="anchor"></a>Optional: Update (ver 3.14)</h2>
+<p>##Optional: Update (ver 3.14)</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span>version <span class="op">=</span> <span class="st">"3.14"</span><span class="op">)</span></code></pre></div>
-</div>
 </div>
 <div id="import-a-kidney-image-from-rmiw" class="section level1">
 <h1 class="hasAnchor">
@@ -252,6 +249,55 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">ImgRds</span><span class="op">)</span></code></pre></div>
 <p>When we save the object/variable in R as a Rds file and load it, the same R object will be reproduced.</p>
 </div>
+<div id="mark-objects-in-images" class="section level2">
+<h2 class="hasAnchor">
+<a href="#mark-objects-in-images" class="anchor"></a>Mark objects in images</h2>
+<p>Overlap two images and color them.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Cell_Img.Rds"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span>
+
+<span class="co">#Read image</span>
+<span class="va">CellImg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">CellImg</span><span class="op">)</span>
+
+<span class="co">#Cell image</span>
+<span class="fu">EBImage</span><span class="fu">::</span><span class="fu">display</span><span class="op">(</span><span class="va">CellImg</span><span class="op">$</span><span class="va">X</span>, method <span class="op">=</span> <span class="st">"raster"</span><span class="op">)</span>
+
+<span class="co">#Display them side-by-side.</span>
+<span class="fu">EBImage</span><span class="fu">::</span><span class="fu">display</span><span class="op">(</span><span class="fu">EBImage</span><span class="fu">::</span><span class="fu">combine</span><span class="op">(</span><span class="va">CellImg</span><span class="op">$</span><span class="va">X</span>, <span class="va">CellImg</span><span class="op">$</span><span class="va">Y</span><span class="op">)</span>, 
+                 nx<span class="op">=</span><span class="fl">2</span>, all<span class="op">=</span><span class="cn">TRUE</span>, spacing <span class="op">=</span> <span class="fl">0.01</span>, margin <span class="op">=</span> <span class="fl">70</span>, method <span class="op">=</span> <span class="st">"raster"</span><span class="op">)</span>
+
+<span class="co">#Overlap them</span>
+<span class="fu">EBImage</span><span class="fu">::</span><span class="fu">display</span><span class="op">(</span><span class="fu">EBImage</span><span class="fu">::</span><span class="fu">paintObjects</span><span class="op">(</span><span class="va">CellImg</span><span class="op">$</span><span class="va">Y</span>,
+                                       <span class="fu">EBImage</span><span class="fu">::</span><span class="fu">toRGB</span><span class="op">(</span><span class="va">CellImg</span><span class="op">$</span><span class="va">X</span><span class="op">)</span>,
+                                       opac<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.2</span><span class="op">)</span>,
+                                       col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>,<span class="st">"red"</span><span class="op">)</span>, thick<span class="op">=</span><span class="cn">TRUE</span>, closed<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>,
+                 method <span class="op">=</span> <span class="st">"raster"</span><span class="op">)</span>
+
+<span class="co">#rMiW function</span>
+<span class="fu">rMiW</span><span class="fu">::</span><span class="fu">ImageView2D</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">CellImg</span><span class="op">$</span><span class="va">X</span>,
+                  ImgArray_y<span class="op">=</span><span class="va">CellImg</span><span class="op">$</span><span class="va">Y</span>,
+                  ImgN<span class="op">=</span><span class="fl">1</span>, 
+                  lab<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Original"</span>, <span class="st">"Overlay"</span>, <span class="st">"Ground truth"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="use-dropfalse-to-prevent-the-array-from-being-deformed" class="section level2">
+<h2 class="hasAnchor">
+<a href="#use-dropfalse-to-prevent-the-array-from-being-deformed" class="anchor"></a>Use <code>drop=FALSE</code> to prevent the array from being deformed</h2>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Cell_Img.Rds"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span>
+
+<span class="co">#Read image</span>
+<span class="va">CellImg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">CellImg</span><span class="op">)</span>
+
+<span class="co">#drop=TRUE</span>
+<span class="va">CellImgT</span> <span class="op">&lt;-</span> <span class="va">CellImg</span><span class="op">$</span><span class="va">X</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">512</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">512</span>,,drop<span class="op">=</span><span class="cn">TRUE</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">CellImgT</span><span class="op">)</span>
+
+<span class="co">#drop=FALSE</span>
+<span class="va">CellImgF</span> <span class="op">&lt;-</span> <span class="va">CellImg</span><span class="op">$</span><span class="va">X</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">512</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">512</span>,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">CellImgF</span><span class="op">)</span></code></pre></div>
+</div>
 </div>
 <div id="basic-clustering-using-k-means" class="section level1">
 <h1 class="hasAnchor">
@@ -261,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="hasAnchor">
 <a href="#the-clustering-with-a-compressed-image-of-1024x1024px" class="anchor"></a>The clustering with a compressed image of 1024x1024px</h2>
 <p>Here, we use the k-means clustering to divide the RGB intensity of the image into three classes.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Read image: delete the 4th element of 3th dimension</span>
 <span class="co">#Load from the R binary</span>
 <span class="va">Img</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"Mouse01_Kid_x20_z0_RR01.Rds"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span><span class="op">)</span>

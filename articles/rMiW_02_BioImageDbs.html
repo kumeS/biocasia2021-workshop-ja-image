@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocAsia2021image</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.4</span>
       </span>
     </div>
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (links[i].hostname != window.location.hostname)
       links[i].target = '_blank';
 });
-</script><p><strong>Last modified:</strong> 2021-11-03 12:01:31<br><strong>Compiled</strong>: 2021-11-03 12:02:54</p>
+</script><p><strong>Last modified:</strong> 2021-11-03 13:04:15<br><strong>Compiled</strong>: 2021-11-03 13:05:26</p>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
@@ -138,13 +138,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <span class="co">#install pydot</span>
 <span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_install.html">py_install</a></span><span class="op">(</span><span class="st">"pydot"</span><span class="op">)</span></code></pre></div>
-<p>##Optional: install keras / tensorflow (ver 3.14)</p>
+</div>
+<div id="optional-install-python-packages-for-r-keras-tensorflow-ver-3-14" class="section level2">
+<h2 class="hasAnchor">
+<a href="#optional-install-python-packages-for-r-keras-tensorflow-ver-3-14" class="anchor"></a>Optional: install python packages for R keras / tensorflow (ver 3.14)</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">keras</span><span class="fu">::</span><span class="fu">install_keras</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="optional-removes-all-files-in-a-cache-file-directory" class="section level2">
+<div id="optional-removes-all-files-in-the-cache-directory" class="section level2">
 <h2 class="hasAnchor">
-<a href="#optional-removes-all-files-in-a-cache-file-directory" class="anchor"></a>Optional: Removes all files in a cache file directory</h2>
+<a href="#optional-removes-all-files-in-the-cache-directory" class="anchor"></a>Optional: Removes all files in the cache directory</h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"R.cache"</span><span class="op">)</span>
 <span class="co">#system("open ~/Library/Caches/org.R-project.R/R/")</span>
@@ -161,19 +164,18 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#obtain-2d-image-dataset-via-bioimagedbs" class="anchor"></a>Obtain 2D image dataset via BioImageDbs</h1>
 <p>About the BioImageDbs package, please ckeck <a href="https://bioconductor.org/packages/release/data/experiment/vignettes/BioImageDbs/inst/doc/BioImageDbs.html">Providing Bioimage Dataset for ExperimentHub</a> document for more information.</p>
-<p>Please check <a href="https://github.com/kumeS/BioImageDbs/blob/main/inst/extdata/v02/metadata_v02.csv">the metadata of BioImageDbs</a> in GitHub.</p>
+<p>Please check <a href="https://github.com/kumeS/BioImageDbs/blob/main/inst/extdata/v02/metadata_v02.csv">the metadata (CSV) of BioImageDbs</a> in GitHub.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#Access via R</span>
-<span class="co">#Providing Bioimage Dataset for ExperimentHub</span>
+<code class="sourceCode R"><span class="co">#Description: Providing Bioimage Dataset for ExperimentHub</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/browseURL.html">browseURL</a></span><span class="op">(</span><span class="st">"https://bioconductor.org/packages/release/data/experiment/vignettes/BioImageDbs/inst/doc/BioImageDbs.html"</span><span class="op">)</span>
 
-<span class="co">#The metadata of BioImageDbs</span>
+<span class="co">#Metadata (CSV) for BioImageDbs</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/browseURL.html">browseURL</a></span><span class="op">(</span><span class="st">"https://github.com/kumeS/BioImageDbs/blob/main/inst/extdata/v02/metadata_v02.csv"</span><span class="op">)</span></code></pre></div>
 <div id="search-query-for-the-bioimagedbs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#search-query-for-the-bioimagedbs" class="anchor"></a>Search query for the BioImageDbs</h2>
-<p>Via the ExperimentHub function, we can obtain the supervised image data as a list of R arrays.</p>
-<p>Here shows an example of a search query for the BioImageDbs (<code>snapshotDate(): 2021-10-18</code>).</p>
+<p>Via the ExperimentHub function, we can obtain the supervised image data as a list of R arrays and their metadata.</p>
+<p>Here shows an example of a search query for the BioImageDbs (Currently, <code>snapshotDate(): 2021-10-18</code> for version 3.14).</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Set the ExperimentHub function</span>
 <span class="va">eh</span> <span class="op">&lt;-</span> <span class="fu">ExperimentHub</span><span class="fu">::</span><span class="fu">ExperimentHub</span><span class="op">(</span><span class="op">)</span>
@@ -195,9 +197,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="va">qr</span><span class="op">$</span><span class="va">description</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></code></pre></div>
 <p>Note: small <code>.rds</code> data does not work. They will be removed in future.</p>
 </div>
-<div id="acquire-the-r-arrays" class="section level2">
+<div id="acquire-the-image-arrays" class="section level2">
 <h2 class="hasAnchor">
-<a href="#acquire-the-r-arrays" class="anchor"></a>Acquire the R arrays</h2>
+<a href="#acquire-the-image-arrays" class="anchor"></a>Acquire the image arrays</h2>
 <p>We use <code>[]</code> to access its metadata while <code>[[]]</code> to get its data instance.</p>
 <p>We could load from cache (~/Library/Caches/org.R-project.R/R/) once the data was downloaded.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -220,9 +222,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="co">#  ..$ Test_GroundTruth_Binary: num [1:84, 1:512, 1:512, 1] 0 1 1 1 1 1 1 0 0 0 ...</span></code></pre></div>
 <p><code>LM_id0001_DIC_C2DH_HeLa_4dTensor_Binary.Rds</code> is a list of 4D arrays with the binary labels for the image segmentation of Human HeLa cells on a flat glass.</p>
 </div>
-<div id="obtain-gif-animation-and-show-it" class="section level2">
+<div id="show-the-gif-animation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#obtain-gif-animation-and-show-it" class="anchor"></a>Obtain gif animation and show it</h2>
+<a href="#show-the-gif-animation" class="anchor"></a>Show the gif animation</h2>
 <p>Here we will get a gif animation and check the result of data visualization.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Access metadata</span>
@@ -237,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">GifData</span><span class="op">)</span>  <span class="co"># Data path</span>
 <span class="fu">magick</span><span class="fu">::</span><span class="fu">image_read</span><span class="op">(</span><span class="va">GifData</span><span class="op">)</span></code></pre></div>
 <p><code>LM_id0001_DIC_C2DH_HeLa_4dTensor_Binary_train_dataset.gif</code> is an animation file (.gif) of the train dataset of LM_id0001_DIC_C2DH_HeLa_4dTensor_Binary.rds</p>
+<p>Currently, only <code>magick::image_read</code> is supported to view gif animation files.</p>
 </div>
 </div>
 <div id="image-segmentation-for-cell-division-images-with-two-class-binary-class" class="section level1">
@@ -262,8 +265,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#create-an-u-net-based-model" class="anchor"></a>Create an U-NET-based model</h2>
 <p>We will make the U-Net model with dropout layers.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#ImgShape &lt;- c(512,512,1)</span>
-<span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">unet2D_v01</span><span class="op">(</span>shape <span class="op">=</span> <span class="va">ImgShape</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">unet2D_v01</span><span class="op">(</span>shape <span class="op">=</span> <span class="va">ImgShape</span><span class="op">)</span>
 <span class="va">model</span></code></pre></div>
 </div>
 <div id="vidualize-the-model" class="section level2">
@@ -297,10 +299,28 @@ document.addEventListener("DOMContentLoaded", function() {
        loss <span class="op">=</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="va">bce_dice_loss</span>,
        metrics <span class="op">=</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="va">dice_coef</span>
      <span class="op">)</span></code></pre></div>
+<ul>
+<li>Parameters:
+<ul>
+<li>optimizer: optimizer instance / (最適化アルゴリズム)
+<ul>
+<li>learning_rate: Learning rate (float &gt;= 0) / 学習率</li>
+</ul>
+</li>
+<li>loss: Objective function / Loss function / 損失関数 (評価指標)</li>
+<li>metrics: Evaluated function / 評価関数</li>
+</ul>
+</li>
+</ul>
+<p>Check the reference sheet in <a href="https://keras.rstudio.com/index.html">keras.rstudio.com</a>:</p>
+<ul>
+<li><a href="https://keras.rstudio.com/reference/optimizer_rmsprop.html">optimizer_rmsprop</a></li>
+</ul>
 </div>
-<div id="fit-the-model" class="section level2">
+<div id="fit-the-model-using-20-images-for-training" class="section level2">
 <h2 class="hasAnchor">
-<a href="#fit-the-model" class="anchor"></a>Fit the model</h2>
+<a href="#fit-the-model-using-20-images-for-training" class="anchor"></a>Fit the model using 20 images for training</h2>
+<p>We should use <code>drop=F</code> to avoid any change of array shape.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Data</span>
 <span class="va">X</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_Original</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
@@ -313,9 +333,16 @@ document.addEventListener("DOMContentLoaded", function() {
              y <span class="op">=</span> <span class="va">Y</span>,
              batch_size <span class="op">=</span> <span class="fl">2</span>,
              epochs <span class="op">=</span> <span class="fl">50</span>,
-             validation_split <span class="op">=</span> <span class="fl">0</span>,
              verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
-<p>Should use <code>drop=F</code> to avoid any change of array shape.</p>
+<ul>
+<li>Parameters:
+<ul>
+<li>batch_size: Number of samples per gradient update / 1度に計算するサンプル数</li>
+<li>epochs: Number of epochs to train the model / エポック数:一つの訓練データを何回繰り返して学習させるか</li>
+<li>verbose: Verbosity mode (0 = silent, 1 = progress bar, 2 = one line per epoch) / 表示モード</li>
+</ul>
+</li>
+</ul>
 </div>
 <div id="save-the-model-by-save_model_hdf5" class="section level2">
 <h2 class="hasAnchor">
@@ -332,9 +359,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="re-load-re-compile-and-re-fit" class="section level2">
 <h2 class="hasAnchor">
 <a href="#re-load-re-compile-and-re-fit" class="anchor"></a>Re-load, re-compile and re-fit</h2>
+<p>We will load the saved model and run compile and fit.</p>
+<p>We can see that the calculation is done from the continuation.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#Re-load</span>
-<span class="va">modelR</span> <span class="op">&lt;-</span> <span class="fu">keras</span><span class="fu">::</span><span class="fu">load_model_hdf5</span><span class="op">(</span><span class="st">"model_v01.h5"</span>,compile<span class="op">=</span><span class="cn">F</span><span class="op">)</span>
+<code class="sourceCode R"><span class="co">#Re-read model</span>
+<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"model_v01.h5"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span>
+
+<span class="co">#Re-load</span>
+<span class="va">modelR</span> <span class="op">&lt;-</span> <span class="fu">keras</span><span class="fu">::</span><span class="fu">load_model_hdf5</span><span class="op">(</span><span class="va">file</span>, compile<span class="op">=</span><span class="cn">F</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">modelR</span><span class="op">)</span>
 <span class="fu">keras</span><span class="fu">::</span><span class="fu">get_weights</span><span class="op">(</span><span class="va">modelR</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 
@@ -352,7 +384,6 @@ document.addEventListener("DOMContentLoaded", function() {
              y <span class="op">=</span> <span class="va">Y</span>,
              batch_size <span class="op">=</span> <span class="fl">2</span>,
              epochs <span class="op">=</span> <span class="fl">50</span>,
-             validation_split <span class="op">=</span> <span class="fl">0</span>,
              verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
@@ -362,6 +393,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="model-evaluation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#model-evaluation" class="anchor"></a>Model evaluation</h2>
+<p>Here we evaluate the model object using <code>keras::evaluate</code> function.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Model evaluation</span>
 <span class="va">Score</span> <span class="op">&lt;-</span> <span class="va">modelR</span> <span class="op">%&gt;%</span> 
@@ -379,6 +411,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="model-prediction-at-image-pixel-level" class="section level2">
 <h2 class="hasAnchor">
 <a href="#model-prediction-at-image-pixel-level" class="anchor"></a>Model prediction at image pixel level</h2>
+<p>The model is used to predict the binarization at the pixel level.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR</span>, 
                            x<span class="op">=</span><span class="va">X</span><span class="op">)</span></code></pre></div>
@@ -395,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.1</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<p>We will visualize the results with another function.</p>
+<p>We can visualize the results using another function.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
                  ImgArray_y<span class="op">=</span><span class="va">Y</span>,
@@ -403,9 +436,9 @@ document.addEventListener("DOMContentLoaded", function() {
                  ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="prediction-for-test-dataset" class="section level1">
+<div id="prediction-for-test-dataset-20-images" class="section level1">
 <h1 class="hasAnchor">
-<a href="#prediction-for-test-dataset" class="anchor"></a>Prediction for test dataset</h1>
+<a href="#prediction-for-test-dataset-20-images" class="anchor"></a>Prediction for test dataset (20 images)</h1>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Data</span>
 <span class="va">Test_X</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_Original</span><span class="op">[</span><span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
@@ -433,13 +466,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <code class="sourceCode R"><span class="va">Test_Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR</span>, 
                                 x<span class="op">=</span><span class="va">Test_X</span><span class="op">)</span>
 
+<span class="co">#visualization 01</span>
 <span class="kw">for</span><span class="op">(</span><span class="va">n</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
 <span class="fu">ImageView2D</span><span class="op">(</span><span class="va">Test_X</span>,
             <span class="va">Test_Y_pred</span>,
             ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.1</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
-<p>Test_X Test_Y Test_Y_pred</p>
+<span class="op">}</span>
+
+<span class="co">#visualization 02</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">Test_X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Test_Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Test_Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="session-information" class="section level1 unnumbered">
