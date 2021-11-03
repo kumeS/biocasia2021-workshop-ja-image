@@ -22,6 +22,36 @@ This workshop covers basic methods of the image processing and image analysis in
 
 このワークショップでは、BioconductorパッケージであるEBImageを使って、Rでの画像処理・画像解析の基本的な方法を扱う。次に、BioImageDbsパッケージを用いて、ExperimentHubからの画像データの取得を行う。さらに、rMiWパッケージが提供する、Deep learningモデルの１つであるU-NETモデルを用いて、教師有り画像セグメンテーション（領域分割）を学び。このワークショップは、Orchestra環境にて実施する。
 
+## What is an image in R? / Rにおいて画像とは何か？
+
+An image is treated as an array format in R.
+Officially, arrays are the R data objects which can store data in more than two dimensions.
+- 4D array: 
+  - number of images
+  - pixels of width
+  - pixels of height
+  - color channels
+- 5D array: 
+  - Number of image sets
+  - pixels in width
+  - pixels in height
+  - pixels in Z-axis (time, depth etc)
+  - color channels
+
+画像は、R上において、アレイ形式/配列形式として扱われる。
+アレイは、2次元以上のデータを格納できるRデータオブジェクトである。
+- 4 次元アレイ: 
+  - 画像枚数
+  - 幅のピクセル(数)
+  - 高さのピクセル(数)
+  - 色チャネル(数)
+- 5 次元アレイ: 
+  - 画像のセット数
+  - 幅のピクセル(数)
+  - 高さのピクセル(数)
+  - Z軸(時間、奥行き)のピクセル(数)
+  - 色チャネル(数)
+
 ### Pre-requisites / 事前要件
 
 - Basic knowledge of R syntax. / Rの構文の基礎知識
