@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocAsia2021image</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.5</span>
       </span>
     </div>
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (links[i].hostname != window.location.hostname)
       links[i].target = '_blank';
 });
-</script><p><strong>Last modified:</strong> 2021-11-04 00:15:24<br><strong>Compiled</strong>: 2021-11-04 00:16:34</p>
+</script><p><strong>Last modified:</strong> 2021-11-04 01:19:18<br><strong>Compiled</strong>: 2021-11-04 01:20:32</p>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#fit-the-model-using-20-images-for-training" class="anchor"></a>Fit the model using 20 images for training</h2>
 <p>We should use <code>drop=F</code> to avoid any change of array shape.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#Data</span>
+<code class="sourceCode R"><span class="co">#Create Train Data</span>
 <span class="va">X</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_Original</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span>
 <span class="va">Y</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_GroundTruth_Binary</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
@@ -388,6 +388,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#re-load-re-compile-and-re-fit" class="anchor"></a>Re-load, re-compile and re-fit</h2>
 <p>We will load the saved model and run compile and fit.</p>
 <p>We can see that the calculation is done from the continuation.</p>
+<div id="model_v01-h5-training-60-epochs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#model_v01-h5-training-60-epochs" class="anchor"></a>model_v01.h5 (training: 60 epochs)</h3>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Re-read model</span>
 <span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"model_v01.h5"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span>
@@ -405,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function() {
        metrics <span class="op">=</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="va">dice_coef</span>
      <span class="op">)</span>
 
-<span class="co">#Re-fit</span>
+<span class="co">#Re-fit: Do not re-fit in this section</span>
 <span class="kw">if</span><span class="op">(</span><span class="cn">F</span><span class="op">)</span><span class="op">{</span>
 <span class="va">history</span> <span class="op">&lt;-</span> <span class="va">modelR</span> <span class="op">%&gt;%</span>
   <span class="fu">keras</span><span class="fu">::</span><span class="fu">fit</span><span class="op">(</span>x <span class="op">=</span> <span class="va">X</span>, 
@@ -415,15 +418,33 @@ document.addEventListener("DOMContentLoaded", function() {
              verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 </div>
-</div>
-<div id="view-results" class="section level1">
-<h1 class="hasAnchor">
-<a href="#view-results" class="anchor"></a>View results</h1>
-<div id="model-evaluation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#model-evaluation" class="anchor"></a>Model evaluation</h2>
-<p>Here we evaluate the model object using <code>keras::evaluate</code> function.</p>
+<div id="model_v02-h5-training-2000-epochs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#model_v02-h5-training-2000-epochs" class="anchor"></a>model_v02.h5 (training: 2000 epochs)</h3>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#Re-read model</span>
+<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"model_v02.h5"</span>, package<span class="op">=</span><span class="st">"rMiW"</span><span class="op">)</span>
+
+<span class="co">#Re-load</span>
+<span class="va">modelR2</span> <span class="op">&lt;-</span> <span class="fu">keras</span><span class="fu">::</span><span class="fu">load_model_hdf5</span><span class="op">(</span><span class="va">file</span>, compile<span class="op">=</span><span class="cn">F</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">modelR2</span><span class="op">)</span>
+<span class="fu">keras</span><span class="fu">::</span><span class="fu">get_weights</span><span class="op">(</span><span class="va">modelR2</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+
+<span class="co">#Re-compile</span>
+<span class="va">modelR2</span> <span class="op">&lt;-</span> <span class="va">modelR2</span> <span class="op">%&gt;%</span>
+     <span class="fu">keras</span><span class="fu">::</span><span class="fu">compile</span><span class="op">(</span>
+       optimizer <span class="op">=</span> <span class="fu">keras</span><span class="fu">::</span><span class="fu">optimizer_rmsprop</span><span class="op">(</span>learning_rate <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span>,
+       loss <span class="op">=</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="va">bce_dice_loss</span>,
+       metrics <span class="op">=</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="va">dice_coef</span>
+     <span class="op">)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="model-evaluation-of-model_v01-h5" class="section level1">
+<h1 class="hasAnchor">
+<a href="#model-evaluation-of-model_v01-h5" class="anchor"></a>Model evaluation of model_v01.h5</h1>
+<p>Here we evaluate the model object using <code>keras::evaluate</code> function.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Model evaluation</span>
 <span class="va">Score</span> <span class="op">&lt;-</span> <span class="va">modelR</span> <span class="op">%&gt;%</span> 
   <span class="fu">keras</span><span class="fu">::</span><span class="fu">evaluate</span><span class="op">(</span><span class="va">X</span>,
@@ -436,20 +457,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="co">#model_v01 (training: 60 epochs)</span>
 <span class="co">#Train loss:1.3279</span>
 <span class="co">#Train accuracy:0.8672</span></code></pre></div>
-</div>
 <div id="model-prediction-at-image-pixel-level" class="section level2">
 <h2 class="hasAnchor">
 <a href="#model-prediction-at-image-pixel-level" class="anchor"></a>Model prediction at image pixel level</h2>
 <p>The model is used to predict the binarization at the pixel level.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR</span>, 
                            x<span class="op">=</span><span class="va">X</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="visualization-of-results" class="section level2">
+<div id="visualization-of-training-results" class="section level2">
 <h2 class="hasAnchor">
-<a href="#visualization-of-results" class="anchor"></a>visualization of results</h2>
+<a href="#visualization-of-training-results" class="anchor"></a>Visualization of training results</h2>
 <p>We use <code>ImageView2D</code> function for the visualization.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">for</span><span class="op">(</span><span class="va">n</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
 <span class="co">#n &lt;- 2</span>
 <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">ImageView2D</span><span class="op">(</span><span class="va">X</span>,
@@ -457,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>We can visualize the results using another function.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Imge: 2</span>
 <span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
                  ImgArray_y<span class="op">=</span><span class="va">Y</span>,
@@ -478,11 +498,10 @@ document.addEventListener("DOMContentLoaded", function() {
                  ImgN<span class="op">=</span><span class="va">N</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 </div>
-</div>
-<div id="prediction-for-test-dataset-20-images" class="section level1">
-<h1 class="hasAnchor">
-<a href="#prediction-for-test-dataset-20-images" class="anchor"></a>Prediction for test dataset (20 images)</h1>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div id="prediction-for-test-dataset-20-images" class="section level2">
+<h2 class="hasAnchor">
+<a href="#prediction-for-test-dataset-20-images" class="anchor"></a>Prediction for test dataset (20 images)</h2>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Data</span>
 <span class="va">Test_X</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_Original</span><span class="op">[</span><span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Test_X</span><span class="op">)</span>
@@ -499,14 +518,113 @@ document.addEventListener("DOMContentLoaded", function() {
            <span class="st">'\nTrain accuracy:'</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Score</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
 <span class="co">#model_v01 (training: 60 epochs)</span>
-<span class="co">#Train loss:XXXX</span>
-<span class="co">#Train accuracy:XXX</span></code></pre></div>
+<span class="co">#Train loss:1.1545</span>
+<span class="co">#Train accuracy:0.8758</span></code></pre></div>
+</div>
 <div id="visualization-of-test-results" class="section level2">
 <h2 class="hasAnchor">
-<a href="#visualization-of-test-results" class="anchor"></a>visualization of test results</h2>
+<a href="#visualization-of-test-results" class="anchor"></a>Visualization of test results</h2>
 <p>We use <code>ImageView2D</code> function for the visualization.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">Test_Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR</span>, 
+                                x<span class="op">=</span><span class="va">Test_X</span><span class="op">)</span>
+
+<span class="co">#visualization</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">N</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">Test_X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Test_Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Test_Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="va">N</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+</div>
+</div>
+<div id="model-evaluation-of-model_v02-h5" class="section level1">
+<h1 class="hasAnchor">
+<a href="#model-evaluation-of-model_v02-h5" class="anchor"></a>Model evaluation of model_v02.h5</h1>
+<p>Here we evaluate the model object using <code>keras::evaluate</code> function.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">## Model evaluation</span>
+<span class="va">Score</span> <span class="op">&lt;-</span> <span class="va">modelR2</span> <span class="op">%&gt;%</span> 
+  <span class="fu">keras</span><span class="fu">::</span><span class="fu">evaluate</span><span class="op">(</span><span class="va">X</span>,
+                  <span class="va">Y</span>, 
+                  verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">'Train loss:'</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Score</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="fl">4</span><span class="op">)</span>, 
+           <span class="st">'\nTrain accuracy:'</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Score</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co">#model_v02 (training: 2000 epochs)</span>
+<span class="co">#Train loss:0.0051</span>
+<span class="co">#Train accuracy:0.9978</span></code></pre></div>
+<div id="model-prediction-at-image-pixel-level-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#model-prediction-at-image-pixel-level-1" class="anchor"></a>Model prediction at image pixel level</h2>
+<p>The model is used to predict the binarization at the pixel level.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR2</span>, 
+                           x<span class="op">=</span><span class="va">X</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="visualization-of-results" class="section level2">
+<h2 class="hasAnchor">
+<a href="#visualization-of-results" class="anchor"></a>Visualization of results</h2>
+<p>We use <code>ImageView2D</code> function for the visualization.</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">for</span><span class="op">(</span><span class="va">n</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
+<span class="co">#n &lt;- 2</span>
+<span class="fu">rMiW</span><span class="fu">::</span><span class="fu">ImageView2D</span><span class="op">(</span><span class="va">X</span>,
+            <span class="va">Y_pred</span>,
+            ImgN<span class="op">=</span><span class="va">n</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p>We can visualize the results using another function.</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#Imge: 2</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
+
+<span class="co">#Imge: 6</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="fl">6</span><span class="op">)</span>
+
+<span class="co">#Image: All</span>
+<span class="kw">for</span><span class="op">(</span><span class="va">N</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span>
+<span class="fu">ImageView2D_pred</span><span class="op">(</span>ImgArray_x<span class="op">=</span><span class="va">X</span>,
+                 ImgArray_y<span class="op">=</span><span class="va">Y</span>,
+                 ImgArray_pred<span class="op">=</span><span class="va">Y_pred</span>,
+                 ImgN<span class="op">=</span><span class="va">N</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+</div>
+<div id="prediction-for-test-dataset-20-images-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#prediction-for-test-dataset-20-images-1" class="anchor"></a>Prediction for test dataset (20 images)</h2>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">#Data</span>
+<span class="va">Test_X</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_Original</span><span class="op">[</span><span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Test_X</span><span class="op">)</span>
+<span class="va">Test_Y</span> <span class="op">&lt;-</span> <span class="va">ImgData</span><span class="op">$</span><span class="va">Train</span><span class="op">$</span><span class="va">Train_GroundTruth_Binary</span><span class="op">[</span><span class="fl">21</span><span class="op">:</span><span class="fl">40</span>,,,,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Test_Y</span><span class="op">)</span>
+
+<span class="co">## Model evaluation</span>
+<span class="va">Score</span> <span class="op">&lt;-</span> <span class="va">modelR2</span> <span class="op">%&gt;%</span> 
+  <span class="fu">keras</span><span class="fu">::</span><span class="fu">evaluate</span><span class="op">(</span><span class="va">Test_X</span>, 
+                  <span class="va">Test_Y</span>, 
+                  verbose <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">'Train loss:'</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Score</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="fl">4</span><span class="op">)</span>, 
+           <span class="st">'\nTrain accuracy:'</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Score</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co">#model_v01 (training: 2000 epochs)</span>
+<span class="co">#Train loss:0.8893</span>
+<span class="co">#Train accuracy:0.9292</span></code></pre></div>
+</div>
+<div id="visualization-of-test-results-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#visualization-of-test-results-1" class="anchor"></a>Visualization of test results</h2>
+<p>We use <code>ImageView2D</code> function for the visualization.</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Test_Y_pred</span> <span class="op">&lt;-</span> <span class="fu">rMiW</span><span class="fu">::</span><span class="fu">model.pred</span><span class="op">(</span>model<span class="op">=</span><span class="va">modelR2</span>, 
                                 x<span class="op">=</span><span class="va">Test_X</span><span class="op">)</span>
 
 <span class="co">#visualization</span>
