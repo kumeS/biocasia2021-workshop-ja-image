@@ -121,6 +121,50 @@
 <a href="#workshop-description--%E6%A6%82%E8%A6%81" class="anchor"></a>Workshop description / 概要</h2>
 <p>This workshop covers basic methods of the image processing and image analysis in R using the Bioconductor package “EBImage” and the Orchestra platform. In addition, the image dataset is obtained from ExperimentHub using the “BioImageDbs” package. Using this dataset, we perform a supervised image segmentation using the U-NET model, one of deep learning models, provided by the rMiW package.</p>
 <p>このワークショップでは、BioconductorパッケージであるEBImageを使って、Rでの画像処理・画像解析の基本的な方法を扱う。次に、BioImageDbsパッケージを用いて、ExperimentHubからの画像データの取得を行う。さらに、rMiWパッケージが提供する、Deep learningモデルの１つであるU-NETモデルを用いて、教師有り画像セグメンテーション（領域分割）を学び。このワークショップは、Orchestra環境にて実施する。</p>
+</div>
+<div id="what-is-an-image-in-r--rにおいて画像とは何か" class="section level2">
+<h2 class="hasAnchor">
+<a href="#what-is-an-image-in-r--r%E3%81%AB%E3%81%8A%E3%81%84%E3%81%A6%E7%94%BB%E5%83%8F%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B" class="anchor"></a>What is an image in R? / Rにおいて画像とは何か？</h2>
+<p>An image is treated as an array format in R. Officially, arrays are the R data objects which can store data in more than two dimensions.</p>
+<ul>
+<li>4D array:
+<ul>
+<li>number of images</li>
+<li>pixels of width</li>
+<li>pixels of height</li>
+<li>color channels</li>
+</ul>
+</li>
+<li>5D array:
+<ul>
+<li>Number of image sets</li>
+<li>pixels in width</li>
+<li>pixels in height</li>
+<li>pixels in Z-axis (time, depth etc)</li>
+<li>color channels</li>
+</ul>
+</li>
+</ul>
+<p>画像は、R上において、アレイ形式/配列形式として扱われる。 アレイは、2次元以上のデータを格納できるRデータオブジェクトである。</p>
+<ul>
+<li>4 次元アレイ:
+<ul>
+<li>画像枚数</li>
+<li>幅のピクセル(数)</li>
+<li>高さのピクセル(数)</li>
+<li>色チャネル(数)</li>
+</ul>
+</li>
+<li>5 次元アレイ:
+<ul>
+<li>画像のセット数</li>
+<li>幅のピクセル(数)</li>
+<li>高さのピクセル(数)</li>
+<li>Z軸(時間、奥行き)のピクセル(数)</li>
+<li>色チャネル(数)</li>
+</ul>
+</li>
+</ul>
 <div id="pre-requisites--事前要件" class="section level3">
 <h3 class="hasAnchor">
 <a href="#pre-requisites--%E4%BA%8B%E5%89%8D%E8%A6%81%E4%BB%B6" class="anchor"></a>Pre-requisites / 事前要件</h3>
