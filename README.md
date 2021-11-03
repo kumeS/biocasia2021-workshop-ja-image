@@ -25,7 +25,9 @@ This workshop covers basic methods of the image processing and image analysis in
 ## What is an image in R? / Rにおいて画像とは何か？
 
 An image is treated as an array format in R.
-Officially, arrays are the R data objects which can store data in more than two dimensions.
+
+Arrays are the R data objects which can store data in more than three dimensions.
+
 - 4D array: 
   - number of images
   - pixels of width
@@ -39,7 +41,9 @@ Officially, arrays are the R data objects which can store data in more than two 
   - color channels
 
 画像は、R上において、アレイ形式/配列形式として扱われる。
-アレイは、2次元以上のデータを格納できるRデータオブジェクトである。
+
+アレイは、3次元以上のデータを格納できるRデータオブジェクトである。
+
 - 4 次元アレイ: 
   - 画像枚数
   - 幅のピクセル(数)
