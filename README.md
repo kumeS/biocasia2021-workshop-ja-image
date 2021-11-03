@@ -35,7 +35,7 @@ Arrays are the R data objects which can store data in more than three dimensions
   - number of images
   - pixels of width
   - pixels of height
-  - color channels
+  - color channels (e.g. RGB, gray)
 - 5D array: 
   - Number of image sets
   - pixels in width
@@ -43,7 +43,7 @@ Arrays are the R data objects which can store data in more than three dimensions
   - pixels in Z-axis (time, depth etc)
   - color channels
 
-画像は、R上において、アレイ形式/配列形式として扱われる。
+画像は、R上において、数値のアレイ(配列)として扱われる。
 
 アレイは、3次元以上のデータを格納できるRデータオブジェクトである。
 
@@ -51,7 +51,7 @@ Arrays are the R data objects which can store data in more than three dimensions
   - 画像枚数
   - 幅のピクセル(数)
   - 高さのピクセル(数)
-  - 色チャネル(数)
+  - 色チャネル(数) (e.g. RGB, グレイモノトーン)
 - 5 次元アレイ: 
   - 画像のセット数
   - 幅のピクセル(数)
