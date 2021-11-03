@@ -41,7 +41,7 @@ library(keras)
 BiocManager::install(version = "3.14")
 ```
 
-## Optional:  Python environment on R
+## Optional: Python environment on R
 
 ```{r echo=TRUE, eval=FALSE}
 #On MacOSX
@@ -51,7 +51,7 @@ library(reticulate)
 reticulate::py_config()
 
 #install pydot
-reticulate::py_install("pydot")
+#reticulate::py_install("pydot")
 ```
 
 ## Optional: install python packages for R keras / tensorflow (ver 3.14)
