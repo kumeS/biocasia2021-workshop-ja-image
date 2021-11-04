@@ -1,5 +1,4 @@
-# Introduction to Bioimage Analysis using R
-# Rにおけるバイオ画像解析入門
+# Introduction to Bioimage Analysis using R / Rにおけるバイオ画像解析入門
 
 ## Author/Instructor
 
