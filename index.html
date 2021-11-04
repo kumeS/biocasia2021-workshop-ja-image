@@ -87,9 +87,14 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="introduction-to-bioimage-analysis-using-r--rにおけるバイオ画像解析入門" class="section level1">
+
+<div id="introduction-to-bioimage-analysis-using-r" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#introduction-to-bioimage-analysis-using-r--r%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%82%A4%E3%82%AA%E7%94%BB%E5%83%8F%E8%A7%A3%E6%9E%90%E5%85%A5%E9%96%80" class="anchor"></a>Introduction to Bioimage Analysis using R / Rにおけるバイオ画像解析入門</h1></div>
+<a href="#introduction-to-bioimage-analysis-using-r" class="anchor"></a>Introduction to Bioimage Analysis using R</h1></div>
+</div>
+<div id="rにおけるバイオ画像解析入門" class="section level1">
+<h1 class="hasAnchor">
+<a href="#r%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%90%E3%82%A4%E3%82%AA%E7%94%BB%E5%83%8F%E8%A7%A3%E6%9E%90%E5%85%A5%E9%96%80" class="anchor"></a>Rにおけるバイオ画像解析入門</h1>
 <div id="authorinstructor" class="section level2">
 <h2 class="hasAnchor">
 <a href="#authorinstructor" class="anchor"></a>Author/Instructor</h2>
@@ -129,7 +134,7 @@
 <p>An image is treated as an array format in R.</p>
 <p>Arrays are the R data objects which can store data in more than three dimensions.</p>
 <ul>
-<li>4D array:
+<li>2D image: 4D array
 <ul>
 <li>number of images</li>
 <li>pixels of width</li>
@@ -137,7 +142,7 @@
 <li>color channels (e.g. RGB, gray)</li>
 </ul>
 </li>
-<li>5D array:
+<li>3D image: 5D array
 <ul>
 <li>Number of image sets</li>
 <li>pixels in width</li>
@@ -150,7 +155,7 @@
 <p>画像は、R上において、数値のアレイ(配列)として扱われる。</p>
 <p>アレイは、3次元以上のデータを格納できるRデータオブジェクトである。</p>
 <ul>
-<li>4 次元アレイ:
+<li>2D 画像: 4 次元アレイ
 <ul>
 <li>画像枚数</li>
 <li>幅のピクセル(数)</li>
@@ -158,7 +163,7 @@
 <li>色チャネル(数) (e.g. RGB, グレイモノトーン)</li>
 </ul>
 </li>
-<li>5 次元アレイ:
+<li>3D 画像: 5 次元アレイ
 <ul>
 <li>画像のセット数</li>
 <li>幅のピクセル(数)</li>
@@ -184,9 +189,10 @@
 <li><strong><a href="https://bioconductor.org/packages/release/bioc/html/EBImage.html">EBImage: Image processing and analysis toolbox for R</a></strong></li>
 <li><strong><a href="https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html">BioImageDbs: Bio- and biomedical imaging dataset for machine learning and deep learning (for ExperimentHub)</a></strong></li>
 <li><strong><a href="https://github.com/kumeS/rMiW">rMiW: For providing a microscopy-based image analysis workflow</a></strong></li>
+<li>Keras / Tensorflow packages for R</li>
 </ul>
-<p>Please see the workshop <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a> for a full list of dependencies.</p>
-<p>詳細は、ワークショップの <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a>ファイルを見てください。</p>
+<p>Please see the workshop <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a> and <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/Dockerfile">Dockerfile</a> for a full list of dependencies.</p>
+<p>詳細は、ワークショップの <a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION"><code>DESCRIPTION</code></a>あるいは<a href="https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/Dockerfile">Dockerfile</a>ファイルを見てください。</p>
 </div>
 <div id="time-outline--タイムテーブル" class="section level3">
 <h3 class="hasAnchor">
@@ -199,11 +205,11 @@
 <tbody>
 <tr class="odd">
 <td>Introduction and Outline Description (slides)</td>
-<td>20 min</td>
+<td>20-25 min</td>
 </tr>
 <tr class="even">
 <td>Basic image processing using EBImage</td>
-<td>15 min</td>
+<td>10-15 min</td>
 </tr>
 <tr class="odd">
 <td>Image segmentation using BioImageDbs and rMiW</td>
@@ -223,11 +229,11 @@
 <tbody>
 <tr class="odd">
 <td>イントロダクション &amp; 概要説明 (スライド)</td>
-<td>20 分</td>
+<td>20-25 分</td>
 </tr>
 <tr class="even">
 <td>EBImageを用いた基本的な画像処理</td>
-<td>15 分</td>
+<td>10-15 分</td>
 </tr>
 <tr class="odd">
 <td>BioImageDbsとrMiWを用いた画像セグメンテーション</td>
@@ -261,12 +267,16 @@
 <h4 class="hasAnchor">
 <a href="#%E5%AD%A6%E7%BF%92%E3%81%AE%E7%9B%AE%E6%A8%99" class="anchor"></a>学習の目標</h4>
 <ul>
-<li>EBImageパッケージの基本的な使い方を習得する</li>
-<li>BioImageDbsを使って、experimentalHubからの画像データ取得を習得する</li>
-<li>画像セグメンテーション(i.e. U-Net model)の基本ワークフローを習得する
+<li>
+<strong>EBImageパッケージの基本的な使い方</strong>を学ぶ</li>
+<li>BioImageDbsを使って、<strong>experimentalHubからの画像データ取得</strong>を学ぶ</li>
+<li>
+<strong>画像セグメンテーション(i.e. U-Net model)の基本ワークフロー</strong>を学ぶ
 <ul>
-<li>多次元アレイのデータ処理に慣れる</li>
-<li>R/Keras文法を使った、U-NETモデルの構築の流れを経験する</li>
+<li>
+<strong>多次元アレイのデータ処理</strong>に慣れる</li>
+<li>
+<strong>R/Keras文法</strong>を使った、U-NETモデルの構築の流れを経験する</li>
 </ul>
 </li>
 </ul>
@@ -283,6 +293,7 @@
 <p><img src="inst/images/pic.png" alt="cloud"></p>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
