@@ -1,4 +1,5 @@
-# Introduction to Bioimage Analysis using R / Rにおけるバイオ画像解析入門
+# Introduction to Bioimage Analysis using R
+# Rにおけるバイオ画像解析入門
 
 ## Author/Instructor
 
@@ -31,12 +32,12 @@ An image is treated as an array format in R.
 
 Arrays are the R data objects which can store data in more than three dimensions.
 
-- 4D array: 
+- 2D image: 4D array
   - number of images
   - pixels of width
   - pixels of height
   - color channels (e.g. RGB, gray)
-- 5D array: 
+- 3D image: 5D array
   - Number of image sets
   - pixels in width
   - pixels in height
@@ -47,12 +48,12 @@ Arrays are the R data objects which can store data in more than three dimensions
 
 アレイは、3次元以上のデータを格納できるRデータオブジェクトである。
 
-- 4 次元アレイ: 
+- 2D 画像: 4 次元アレイ
   - 画像枚数
   - 幅のピクセル(数)
   - 高さのピクセル(数)
   - 色チャネル(数) (e.g. RGB, グレイモノトーン)
-- 5 次元アレイ: 
+- 3D 画像: 5 次元アレイ
   - 画像のセット数
   - 幅のピクセル(数)
   - 高さのピクセル(数)
@@ -71,28 +72,30 @@ These packages are the focus of this workshop: / このワークショップで�
 -   **[EBImage: Image processing and analysis toolbox for R](https://bioconductor.org/packages/release/bioc/html/EBImage.html)**
 -   **[BioImageDbs: Bio- and biomedical imaging dataset for machine learning and deep learning (for ExperimentHub)](https://bioconductor.org/packages/release/data/experiment/html/BioImageDbs.html)**
 -   **[rMiW: For providing a microscopy-based image analysis workflow](https://github.com/kumeS/rMiW)**
-
+  - Keras / Tensorflow packages for R
+  
 Please see the workshop
-[`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION) 
+and [Dockerfile](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/Dockerfile) 
 for a full list of dependencies. 
 
 詳細は、ワークショップの
-[`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)ファイルを見てください。
+[`DESCRIPTION`](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/DESCRIPTION)あるいは[Dockerfile](https://github.com/kumeS/biocasia2021-workshop-ja-image/blob/master/Dockerfile)ファイルを見てください。
 
 ### Time outline / タイムテーブル
 
 | Activity                                       | Time   |
 |------------------------------------------------|--------|
-| Introduction and Outline Description (slides)  | 20 min |
-| Basic image processing using EBImage           | 15 min |
+| Introduction and Outline Description (slides)  | 20-25 min |
+| Basic image processing using EBImage           | 10-15 min |
 | Image segmentation using BioImageDbs and rMiW  | 20 min |
 | Q&A                                            |  5 min |
 
 
 | 内容                                            |  時間  |
 |-------------------------------------------------|--------|
-| イントロダクション & 概要説明 (スライド)        |  20 分 |
-| EBImageを用いた基本的な画像処理                 |  15 分 |
+| イントロダクション & 概要説明 (スライド)        |  20-25 分 |
+| EBImageを用いた基本的な画像処理                 |  10-15 分 |
 | BioImageDbsとrMiWを用いた画像セグメンテーション |  20 分 |
 | 質疑応答                                        |   5 分 |
 
@@ -108,11 +111,11 @@ for a full list of dependencies.
 
 #### 学習の目標
 
-- EBImageパッケージの基本的な使い方を習得する
-- BioImageDbsを使って、experimentalHubからの画像データ取得を習得する
-- 画像セグメンテーション(i.e. U-Net model)の基本ワークフローを習得する
-  - 多次元アレイのデータ処理に慣れる
-  - R/Keras文法を使った、U-NETモデルの構築の流れを経験する
+- **EBImageパッケージの基本的な使い方**を学ぶ
+- BioImageDbsを使って、**experimentalHubからの画像データ取得**を学ぶ
+- **画像セグメンテーション(i.e. U-Net model)の基本ワークフロー**を学ぶ
+  - **多次元アレイのデータ処理**に慣れる
+  - **R/Keras文法**を使った、U-NETモデルの構築の流れを経験する
 
 ## Execution environment / 実行環境
 
