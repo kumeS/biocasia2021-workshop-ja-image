@@ -99,6 +99,8 @@ for a full list of dependencies.
 | BioImageDbsとrMiWを用いた画像セグメンテーション |  20 分 |
 | 質疑応答                                        |   5 分 |
 
+- [概要説明 Google スライド](https://docs.google.com/presentation/d/1bUm7tgZiRhLfusL5RCA4gJA4wtskd64JuKexJi8iEcQ/edit#slide=id.p1)
+
 ### Workshop goals / ワークショップでの目標 
 
 #### Learning goals
