@@ -8,9 +8,9 @@ RUN sudo apt-get update -y && sudo apt-get install -y pciutils libfftw3-dev libf
 
 RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(ask=FALSE); devtools::install('.', dependencies=TRUE, build_vignettes=TRUE, repos = BiocManager::repositories())"
 
-RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(c('ExperimentHub', 'BioImageDbs', 'EBImage', 'BiocStyle', 'AnnotationHub'), ask=FALSE); devtools::install_github('kumeS/rMiW', build_vignettes=FALSE)"
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); BiocManager::install(c('ExperimentHub', 'BioImageDbs', 'EBImage', 'BiocStyle', 'AnnotationHub'), ask=FALSE); devtools::install_github('kumeS/rMiW', build_vignettes=FALSE, dependencies ='Imports')"
 
-RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install.packages(c('R.cache', 'knitr', 'rmarkdown', 'DiagrammeR', 'reticulate', 'remotes')); remotes::install_version('keras', '2.3.0'); remotes::install_version('tensorflow', '2.2.0'); keras::install_keras(); reticulate::py_install('pydot')"
+RUN Rscript -e "options(repos = c(CRAN = 'https://cran.r-project.org')); install.packages(c('R.cache', 'knitr', 'rmarkdown', 'DiagrammeR', 'reticulate', 'remotes')); keras::install_keras(); reticulate::py_install('pydot')"
 
 
 
